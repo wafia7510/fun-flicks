@@ -335,4 +335,15 @@ questions=[
     "answers":"C"
 }
 ]
-print(questions[0])
+"""for question in questions:
+    print(f"{question['question']}")
+    for option in question["options"]:
+        print(f"{option}")
+    print(f"Answers:{question['answers']}")
+"""
+lst=[[1,2],[2,3]]
+
+for l in lst:
+    for g in l:
+        print(g)
+    

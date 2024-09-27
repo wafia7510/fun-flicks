@@ -348,7 +348,7 @@ def playGame():
     while i<len(questions):
         random_number=random.randrange(0,len(questions)) #getting random number from 0-49
         random_question=questions[random_number]
-        print(f"Question{i+1}:{random_question["question"]}")
+        print(f"Question{i+1} :{random_question["question"]}")
         for option in random_question["options"]:#to loop through dictionary in questions for options
             print(option)
         user_input=input("Enter A/B/C/D to choose answer\n").upper()
@@ -356,15 +356,20 @@ def playGame():
         i+=1
 def validate_input(user,random_question):
     global score
-    if user in answers_list:
-        if user in random_question["answers"]:
-            score+=1
-            print("Your answer is correct")
-            print(f"Your Score is :{score}\n")
-        else:
-            print("Wrong answer\n")
+    
+     # Loop to keep asking until the user provides a valid answer
+    while user not in answers_list:
+        print("Invalid input. Please enter a valid option (A/B/C/D).")
+        user = input("Enter A/B/C/D to choose your answer\n").upper()
+    
+    # After valid input, check if the user's input matches the correct answer
+    if user == random_question["answers"]:
+        score += 1
+        print("Your answer is correct!")
+        print(f"Your Score is: {score}\n")
     else:
-        print(f"Please enter the right option from the given options")
+        print("Wrong Answer")
+    
 playGame()
 
     

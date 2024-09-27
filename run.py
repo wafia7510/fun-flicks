@@ -341,20 +341,41 @@ questions=[
 
 answers_list=["A","B","C","D"]
 score=0
+
 def playGame():
     print("Play Game")
     global score
     i=0
+    asked_questions= []
+
     while i<len(questions):
+        # Getting random number from 0-49
         random_number=random.randrange(0,len(questions)) #getting random number from 0-49
-        random_question=questions[random_number]
+        
+        while random_number in asked_questions:
+            random_number=random.randrange(0,len(questions))
+        
+        # Marking the question as asked 
+        asked_questions.append(random_number)
+
+        #get the elements of questions list
+        random_question=questions[random_number] 
         print(f"Question{i+1} :{random_question["question"]}")
-        for option in random_question["options"]:#to loop through dictionary in questions for options
+        
+        #to loop through dictionary in questions for options
+        for option in random_question["options"]:
             print(option)
+
         user_input=input("Enter A/B/C/D to choose answer\n").upper()
+
         validate_input(user_input,random_question)
         i+=1
+
 def validate_input(user,random_question):
+
+    """This method is defined to check the 
+    validity of user input and checking the answers of user
+    """
     global score
     
      # Loop to keep asking until the user provides a valid answer

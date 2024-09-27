@@ -338,30 +338,31 @@ questions=[
 answers_list=["A","B","C","D"]
 score=0
 wrong_answers=0
-
+asked_questions= []
 def playGame():
     print("Play Game")
     global score
     global wrong_answers
+
+    # Check if there are any questions
+    if not questions:
+        print("No questions available.")
+        return
     i=0
-    asked_questions= []
+    
 
     while i<len(questions):
      try:  
-        # Getting random number from 0-49
-            random_number=random.randrange(0,len(questions)) #getting random number from 0-49
-        
-            while random_number in asked_questions:
-                random_number=random.randrange(0,len(questions))
-        
-        # Marking the question as asked 
-            asked_questions.append(random_number)
+            # Select a random question that hasn't been asked yet
+            random_question = get_random_question()
 
-        #get the elements of questions list
-            random_question=questions[random_number] 
+            if random_question is None:  # If all questions are asked
+                print("All questions have been asked. Game over!")
+                break
+       
             print(f"Question{i+1} :{random_question["question"]}")
         
-        #to loop through dictionary in questions for options
+            #to loop through dictionary in questions for options
             for option in random_question["options"]:
                 print(option)
 
@@ -375,6 +376,24 @@ def playGame():
      except Exception as e:
             print(f"An unexpected error occurred: {e}")
             break
+
+def get_random_question():
+    """Retrieve a random question that hasn't been asked yet."""
+    if len(asked_questions) == len(questions):
+        return None  # All questions have been asked
+
+     # Getting random number from 0-49
+    random_number=random.randrange(0,len(questions)) #getting random number from 0-49
+        
+    while random_number in asked_questions:
+        random_number=random.randrange(0,len(questions))
+        
+    # Marking the question as asked 
+    asked_questions.append(random_number)
+
+    #get the elements of questions list
+    random_question=questions[random_number] 
+    return random_question
 
 def validate_input(user,random_question):
 

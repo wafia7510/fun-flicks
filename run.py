@@ -303,7 +303,7 @@ questions=[
 {
     #ques46
     "question":"What’s a cat’s favorite type of fish?",
-    "options":["A. Salmon","B. Tuna","C. Sardine","D. All of the above","Answer: D. All of the above"],
+    "options":["A. Salmon","B. Tuna","C. Sardine","D. All of the above"],
     "answers":"D"
 }
 ,
@@ -338,25 +338,39 @@ questions=[
     for option in question["options"]:
         print(f"{option}")
     print(f"Answers:{question['answers']}")"""
-i=0
+
+answers_list=["A","B","C","D"]
 score=0
-while i<len(questions):
-    
-    random_number=random.randrange(0,len(questions)) #getting random number from 0-49
-    random_question=questions[random_number]
-    print(f"Question{i}:{random_question["question"]}")
-    for option in random_question["options"]:
-        print(option)
-    user_input=input("Enter A/B/C/D to choose answer\n")
-    if user_input in random_question["answers"]:
-        score+=1
-        print("Your answer is correct")
-        print(f"Score is :{score}")
+def playGame():
+    print("Play Game")
+    global score
+    i=0
+    while i<len(questions):
+        random_number=random.randrange(0,len(questions)) #getting random number from 0-49
+        random_question=questions[random_number]
+        print(f"Question{i+1}:{random_question["question"]}")
+        for option in random_question["options"]:#to loop through dictionary in questions for options
+            print(option)
+        user_input=input("Enter A/B/C/D to choose answer\n").upper()
+        validate_input(user_input,random_question)
+        i+=1
+def validate_input(user,random_question):
+    global score
+    if user in answers_list:
+        if user in random_question["answers"]:
+            score+=1
+            print("Your answer is correct")
+            print(f"Your Score is :{score}\n")
+        else:
+            print("Wrong answer\n")
     else:
-        print("Wrong answer")
-    i+=1
+        print(f"Please enter the right option from the given options")
+playGame()
+
     
 
+
+   
 
     
     

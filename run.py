@@ -444,7 +444,7 @@ def main():
     print("\nNote: Make sure to only enter A, B, C, or D as your answer.")
     print("\nLet's begin!\n")
     playGame()
-    print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions")
+    print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions\n")
 
 main()
     

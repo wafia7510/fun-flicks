@@ -333,43 +333,48 @@ questions=[
     "answers":"C"
 }
 ]
-"""for question in questions:
-    print(f"{question['question']}")
-    for option in question["options"]:
-        print(f"{option}")
-    print(f"Answers:{question['answers']}")"""
+
 
 answers_list=["A","B","C","D"]
 score=0
+wrong_answers=0
 
 def playGame():
     print("Play Game")
     global score
+    global wrong_answers
     i=0
     asked_questions= []
 
     while i<len(questions):
+     try:  
         # Getting random number from 0-49
-        random_number=random.randrange(0,len(questions)) #getting random number from 0-49
+            random_number=random.randrange(0,len(questions)) #getting random number from 0-49
         
-        while random_number in asked_questions:
-            random_number=random.randrange(0,len(questions))
+            while random_number in asked_questions:
+                random_number=random.randrange(0,len(questions))
         
         # Marking the question as asked 
-        asked_questions.append(random_number)
+            asked_questions.append(random_number)
 
         #get the elements of questions list
-        random_question=questions[random_number] 
-        print(f"Question{i+1} :{random_question["question"]}")
+            random_question=questions[random_number] 
+            print(f"Question{i+1} :{random_question["question"]}")
         
         #to loop through dictionary in questions for options
-        for option in random_question["options"]:
-            print(option)
+            for option in random_question["options"]:
+                print(option)
 
-        user_input=input("Enter A/B/C/D to choose answer\n").upper()
+            user_input=input("Enter A/B/C/D to choose answer\n").upper()
 
-        validate_input(user_input,random_question)
-        i+=1
+            validate_input(user_input,random_question)
+            i+=1
+     except (IndexError, KeyError) as e:
+            print(f"Error occurred while selecting question: {e}")
+            break  # Or continue to the next iteration if it's recoverable
+     except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+            break
 
 def validate_input(user,random_question):
 
@@ -377,22 +382,29 @@ def validate_input(user,random_question):
     validity of user input and checking the answers of user
     """
     global score
+    global wrong_answers
+    try:
     
      # Loop to keep asking until the user provides a valid answer
-    while user not in answers_list:
-        print("Invalid input. Please enter a valid option (A/B/C/D).")
-        user = input("Enter A/B/C/D to choose your answer\n").upper()
+        while user not in answers_list:
+            print("Invalid input. Please enter a valid option (A/B/C/D).")
+            user = input("Enter A/B/C/D to choose your answer\n").upper()
     
     # After valid input, check if the user's input matches the correct answer
-    if user == random_question["answers"]:
-        score += 1
-        print("Your answer is correct!")
-        print(f"Your Score is: {score}\n")
-    else:
-        print("Wrong Answer")
-    
-playGame()
+        if user == random_question["answers"]:
+            score += 1
+            print("Your answer is correct!")
+            print(f"Your Score is: {score}\n")
+        else:
+            wrong_answers+=1
+            print("Wrong Answer\n")
+    except KeyError as e:
+        print(f"KeyError: {e}")
+    except Exception as e:
+        print(f"An error occurred while validating input: {e}")
 
+playGame()
+print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions")
     
 
 

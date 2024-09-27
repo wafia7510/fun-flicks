@@ -343,7 +343,6 @@ wrong_answers=0
 asked_questions= []
 
 def playGame():
-    print("Play Game")
     global score
     global wrong_answers
 
@@ -432,8 +431,22 @@ def validate_input(user,random_question):
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
 
-playGame()
-print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions")
+def main():
+    """Main entry point of the program."""
+    print("Welcome to Fun Flick - The Ultimate Quiz Game!")
+    print("\nHow to Play Fun Flick:")
+    print("1. You will be asked a series of random questions.")
+    print("2. Each question will have four options: A, B, C, and D.")
+    print("3. You need to type the letter corresponding to the correct answer (A, B, C, or D).")
+    print("4. If you choose the correct answer, your score will increase by 1.")
+    print("5. The game will continue until all questions are answered or you exit.")
+    print("6. No questions will be repeated during the game.")
+    print("\nNote: Make sure to only enter A, B, C, or D as your answer.")
+    print("\nLet's begin!\n")
+    playGame()
+    print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions")
+
+main()
     
 
 

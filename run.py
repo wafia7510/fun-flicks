@@ -1,6 +1,4 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random #impoting random module
 questions=[
     #ques1
 {
@@ -339,11 +337,26 @@ questions=[
     print(f"{question['question']}")
     for option in question["options"]:
         print(f"{option}")
-    print(f"Answers:{question['answers']}")
-"""
-lst=[[1,2],[2,3]]
+    print(f"Answers:{question['answers']}")"""
+i=0
+score=0
+while i<len(questions):
+    
+    random_number=random.randrange(0,len(questions)) #getting random number from 0-49
+    random_question=questions[random_number]
+    print(f"Question{i}:{random_question["question"]}")
+    for option in random_question["options"]:
+        print(option)
+    user_input=input("Enter A/B/C/D to choose answer\n")
+    if user_input in random_question["answers"]:
+        score+=1
+        print("Your answer is correct")
+        print(f"Score is :{score}")
+    else:
+        print("Wrong answer")
+    i+=1
+    
 
-for l in lst:
-    for g in l:
-        print(g)
+
+    
     

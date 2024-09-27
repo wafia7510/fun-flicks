@@ -334,11 +334,14 @@ questions=[
 }
 ]
 
-
 answers_list=["A","B","C","D"]
+
 score=0
+
 wrong_answers=0
+
 asked_questions= []
+
 def playGame():
     print("Play Game")
     global score
@@ -366,7 +369,7 @@ def playGame():
             for option in random_question["options"]:
                 print(option)
 
-            user_input=input("Enter A/B/C/D to choose answer\n").upper()
+            user_input=get_validated_input()
 
             validate_input(user_input,random_question)
             i+=1
@@ -395,21 +398,29 @@ def get_random_question():
     random_question=questions[random_number] 
     return random_question
 
+def get_validated_input():
+    """Prompt the user for a valid input and keep asking until a valid answer is entered."""
+    while True:
+        try:
+            user_input = input("Enter A/B/C/D to choose your answer\n").upper()
+            if user_input in answers_list:
+                return user_input
+            else:
+                raise ValueError("Invalid input.")
+        except ValueError as e:
+            print(f"Error: {e}. Please enter a valid option (A/B/C/D).")
+
+
+
 def validate_input(user,random_question):
 
-    """This method is defined to check the 
-    validity of user input and checking the answers of user
-    """
+    """Check if the user's input matches the correct answer and update the score."""
+   
     global score
     global wrong_answers
     try:
     
-     # Loop to keep asking until the user provides a valid answer
-        while user not in answers_list:
-            print("Invalid input. Please enter a valid option (A/B/C/D).")
-            user = input("Enter A/B/C/D to choose your answer\n").upper()
-    
-    # After valid input, check if the user's input matches the correct answer
+        # After valid input, check if the user's input matches the correct answer
         if user == random_question["answers"]:
             score += 1
             print("Your answer is correct!")
@@ -417,8 +428,7 @@ def validate_input(user,random_question):
         else:
             wrong_answers+=1
             print("Wrong Answer\n")
-    except KeyError as e:
-        print(f"KeyError: {e}")
+    
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
 

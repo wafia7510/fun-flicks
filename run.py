@@ -16,7 +16,7 @@ questions=[
 {
     #ques3
     "question":"How many lives do cats famously have?",
-    "options":["A. 3","B. 7","C. 9""D. 10"],
+    "options":["A. 3","B. 7","C. 9","D. 10"],
     "answers":"C"
 },
 {
@@ -480,7 +480,7 @@ def main():
     print("\nLet's begin!\n")
     # Call playGame() method
     playGame()
-    
+
     print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions\n")
 
     while True:

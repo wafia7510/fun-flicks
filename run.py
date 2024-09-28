@@ -342,6 +342,15 @@ wrong_answers=0
 asked_questions= []
 
 def playGame():
+    """
+    Starts and manages the quiz game session for Fun Flick.
+    This function randomly selects a question from the predefined list of questions and presents it to the user.
+    The user is asked to input their answer by choosing between four options: A, B, C, or D. The function
+    validates the user's input to ensure it's one of the valid options and checks if it matches the correct
+    answer. The player's score is updated based on their answers. No question will be repeated during a single
+    game session, and the game ends when all questions have been answered.
+    
+    """
     global score
     global wrong_answers
 
@@ -349,10 +358,12 @@ def playGame():
     if not questions:
         print("No questions available.")
         return
-    i=0
+
+    # counter for iteration of list    
+    counter=0
     
 
-    while i<len(questions):
+    while counter<len(questions):
      try:  
             # Select a random question that hasn't been asked yet
             random_question = get_random_question()
@@ -361,7 +372,7 @@ def playGame():
                 print("All questions have been asked. Game over!")
                 break
        
-            print(f"Question{i+1} :{random_question["question"]}")
+            print(f"Question {counter+1} :{random_question["question"]}")
         
             #to loop through dictionary in questions for options
             for option in random_question["options"]:
@@ -370,7 +381,7 @@ def playGame():
             user_input=get_validated_input()
 
             validate_input(user_input,random_question)
-            i+=1
+            counter+=1
      except (IndexError, KeyError) as e:
             print(f"Error occurred while selecting question: {e}")
             break  # Or continue to the next iteration if it's recoverable
@@ -379,7 +390,9 @@ def playGame():
             break
 
 def get_random_question():
+
     """Retrieve a random question that hasn't been asked yet."""
+
     if len(asked_questions) == len(questions):
         return None  # All questions have been asked
 
@@ -397,7 +410,9 @@ def get_random_question():
     return random_question
 
 def get_validated_input():
+    
     """Prompt the user for a valid input and keep asking until a valid answer is entered."""
+
     while True:
         try:
             user_input = input("Enter A/B/C/D to choose your answer\n").upper()
@@ -462,6 +477,7 @@ def main():
             break # to exit from the loop
         else:
             print("Invalid input. Please enter 'Y' to play again or 'N' to exit.")
+# call main method to start game        
 main()
 
     

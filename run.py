@@ -412,7 +412,7 @@ def get_random_question():
     # Marking the question as asked 
     asked_questions.append(random_number)
 
-    #get the elements of questions list
+    # Get the elements of questions list
     random_question=questions[random_number] 
     return random_question
 
@@ -465,6 +465,21 @@ def reset_game():
     asked_questions= []
 
 
+def displayScore():
+    global score,wrong_answers
+    if score == 50:
+        print(f"Your total score is {score}\n")
+        print("Congratulations! You have answered all questions right ")
+    elif score >0 or score < 50:
+        print(f"Your total score is {score}\n")
+        print(f"You have answered {wrong_answers} wrong questions\n")
+    else:
+        print("Oops! You weren't able to answer any questions correctly. Better luck next time!")
+
+    print("Game over")
+
+
+
 # Definition of main() method
 def main():
     """Main entry point of the program."""
@@ -480,8 +495,7 @@ def main():
     print("\nLet's begin!\n")
     # Call playGame() method
     playGame()
-
-    print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions\n")
+    displayScore()
 
     while True:
         print("Do you want to play again this game")
@@ -489,14 +503,21 @@ def main():
         if play_again == "Y":
             reset_game()
             playGame()
+            displayScore()
         elif play_again =="N":
             print("\nThank you for playing Fun Flick! Goodbye!")
             break # to exit from the loop
         else:
             print("Invalid input. Please enter 'Y' to play again or 'N' to exit.")
 
+
+
+    
+
 # Call main() method to start game        
 main()
+
+
 
     
 

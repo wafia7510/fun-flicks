@@ -357,6 +357,7 @@ def playGame():
     game session, and the game ends when all questions have been answered.
     
     """
+    print("Game begins!")
     global score
     global wrong_answers
 
@@ -386,12 +387,16 @@ def playGame():
 
             validate_input(user_input,random_question)
             counter+=1
+
      except (IndexError, KeyError) as e:
             print(f"Error occurred while selecting question: {e}")
             break  # Or continue to the next iteration if it's recoverable
      except Exception as e:
             print(f"An unexpected error occurred: {e}")
             break
+        
+    # Call DisplayScore method
+    displayScore()
 
 
 
@@ -495,7 +500,7 @@ def main():
     print("\nLet's begin!\n")
     # Call playGame() method
     playGame()
-    displayScore()
+    
 
     while True:
         print("Do you want to play again this game")
@@ -503,7 +508,7 @@ def main():
         if play_again == "Y":
             reset_game()
             playGame()
-            displayScore()
+            
         elif play_again =="N":
             print("\nThank you for playing Fun Flick! Goodbye!")
             break # to exit from the loop

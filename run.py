@@ -377,15 +377,18 @@ def playGame():
                 print("All questions have been asked. Game over!")
                 break
        
-            print(f"Question {counter+1} :{random_question["question"]}")
+            print(f"Question #{counter+1} :{random_question["question"]}")
         
             #to loop through dictionary in questions for options
             for option in random_question["options"]:
                 print(option)
+                
+            print("\n")
 
             user_input=get_validated_input()
 
             validate_input(user_input,random_question)
+
             counter+=1
 
      except (IndexError, KeyError) as e:
@@ -394,7 +397,7 @@ def playGame():
      except Exception as e:
             print(f"An unexpected error occurred: {e}")
             break
-        
+
     # Call DisplayScore method
     displayScore()
 
@@ -471,17 +474,20 @@ def reset_game():
 
 
 def displayScore():
+    """
+    Display the score and wrong answers
+    """
     global score,wrong_answers
     if score == 50:
-        print(f"Your total score is {score}\n")
-        print("Congratulations! You have answered all questions right ")
+        print(f"Your total score is {score}")
+        print("Congratulations! You have answered all questions right\n ")
     elif score >0 or score < 50:
-        print(f"Your total score is {score}\n")
+        print(f"Your total score is {score}")
         print(f"You have answered {wrong_answers} wrong questions\n")
     else:
         print("Oops! You weren't able to answer any questions correctly. Better luck next time!")
 
-    print("Game over")
+    print("Game over\n")
 
 
 
@@ -513,7 +519,7 @@ def main():
             print("\nThank you for playing Fun Flick! Goodbye!")
             break # to exit from the loop
         else:
-            print("Invalid input. Please enter 'Y' to play again or 'N' to exit.")
+            print("Invalid input. Please enter 'Y' to play again or 'N' to exit.\n")
 
 
 

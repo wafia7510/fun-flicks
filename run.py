@@ -1,4 +1,5 @@
-import random #impoting random module
+#impoting random module
+import random 
 questions=[
     #ques1
 {
@@ -332,15 +333,20 @@ questions=[
     "answers":"C"
 }
 ]
-
+# To validate answer from answers_list
 answers_list=["A","B","C","D"]
 
+# Global vars of score and wrong_answers
 score=0
 
 wrong_answers=0
 
+# List to check the matched question 
 asked_questions= []
 
+
+
+# Definition of playGame() method
 def playGame():
     """
     Starts and manages the quiz game session for Fun Flick.
@@ -361,8 +367,6 @@ def playGame():
 
     # counter for iteration of list    
     counter=0
-    
-
     while counter<len(questions):
      try:  
             # Select a random question that hasn't been asked yet
@@ -389,6 +393,9 @@ def playGame():
             print(f"An unexpected error occurred: {e}")
             break
 
+
+
+# Definition of get_random_question() method
 def get_random_question():
 
     """Retrieve a random question that hasn't been asked yet."""
@@ -409,8 +416,11 @@ def get_random_question():
     random_question=questions[random_number] 
     return random_question
 
+
+
+# Definition of get_validated_input() method
 def get_validated_input():
-    
+
     """Prompt the user for a valid input and keep asking until a valid answer is entered."""
 
     while True:
@@ -424,7 +434,7 @@ def get_validated_input():
             print(f"Error: {e}. Please enter a valid option (A/B/C/D).")
 
 
-
+# Definition validate_input(user,random_question) method 
 def validate_input(user,random_question):
 
     """Check if the user's input matches the correct answer and update the score."""
@@ -445,6 +455,8 @@ def validate_input(user,random_question):
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
 
+
+# Definition of reset_game()
 def reset_game():
     """Reset the necessary variables to start the game fresh."""
     global score, wrong_answers,asked_questions
@@ -452,6 +464,8 @@ def reset_game():
     wrong_answers = 0
     asked_questions= []
 
+
+# Definition of main() method
 def main():
     """Main entry point of the program."""
     print("Welcome to Fun Flick - The Ultimate Quiz Game!")
@@ -477,7 +491,8 @@ def main():
             break # to exit from the loop
         else:
             print("Invalid input. Please enter 'Y' to play again or 'N' to exit.")
-# call main method to start game        
+
+# Call main() method to start game        
 main()
 
     

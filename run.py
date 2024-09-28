@@ -195,8 +195,7 @@ questions=[
 {
     #ques31
     "question":"What’s a cat’s most sensitive body part?",
-    "options":["A. Ears","B. Whiskers","C. Paws",
-"D. Tail"],
+    "options":["A. Ears","B. Whiskers","C. Paws","D. Tail"],
     "answers":"B"
 }
 ,
@@ -431,6 +430,13 @@ def validate_input(user,random_question):
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
 
+def reset_game():
+    """Reset the necessary variables to start the game fresh."""
+    global score, wrong_answers,asked_questions
+    score = 0
+    wrong_answers = 0
+    asked_questions= []
+
 def main():
     """Main entry point of the program."""
     print("Welcome to Fun Flick - The Ultimate Quiz Game!")
@@ -445,8 +451,19 @@ def main():
     print("\nLet's begin!\n")
     playGame()
     print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions\n")
-
+    while True:
+        print("Do you want to play again this game")
+        play_again=input("Enter 'Y' to play game or 'N' to exit from game\n").upper()
+        if play_again == "Y":
+            reset_game()
+            playGame()
+        elif play_again =="N":
+            print("\nThank you for playing Fun Flick! Goodbye!")
+            break # to exit from the loop
+        else:
+            print("Invalid input. Please enter 'Y' to play again or 'N' to exit.")
 main()
+
     
 
 

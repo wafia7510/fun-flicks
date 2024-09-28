@@ -357,7 +357,7 @@ def playGame():
     game session, and the game ends when all questions have been answered.
     
     """
-    print("Game begins!")
+    print("Game begins!\n")
     global score
     global wrong_answers
 

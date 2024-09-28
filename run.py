@@ -478,8 +478,11 @@ def main():
     print("6. No questions will be repeated during the game.")
     print("\nNote: Make sure to only enter A, B, C, or D as your answer.")
     print("\nLet's begin!\n")
+    # Call playGame() method
     playGame()
+    
     print(f"Your Total Score is {score} and you have answered {wrong_answers} wrong questions\n")
+
     while True:
         print("Do you want to play again this game")
         play_again=input("Enter 'Y' to play game or 'N' to exit from game\n").upper()

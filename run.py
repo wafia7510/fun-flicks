@@ -1,5 +1,8 @@
-#impoting random module
+# Impoting random module
 import random 
+import colorama 
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 questions=[
     #ques1
 {
@@ -355,7 +358,6 @@ def playGame():
     validates the user's input to ensure it's one of the valid options and checks if it matches the correct
     answer. The player's score is updated based on their answers. No question will be repeated during a single
     game session, and the game ends when all questions have been answered.
-    
     """
     print("Game begins!\n")
     global score
@@ -377,7 +379,7 @@ def playGame():
                 print("All questions have been asked. Game over!")
                 break
        
-            print(f"Question #{counter+1} :{random_question["question"]}")
+            print(f"Question #{counter+1}: {random_question["question"]}")
         
             #to loop through dictionary in questions for options
             for option in random_question["options"]:
@@ -437,9 +439,9 @@ def get_validated_input():
             if user_input in answers_list:
                 return user_input
             else:
-                raise ValueError("Invalid input.")
+                raise ValueError(f"{user_input} is Invalid input.")
         except ValueError as e:
-            print(f"Error: {e}. Please enter a valid option (A/B/C/D).")
+            print(Fore.RED+f"Error: {e}. Please enter a valid option (A/B/C/D).")
 
 
 # Definition validate_input(user,random_question) method 
@@ -454,11 +456,11 @@ def validate_input(user,random_question):
         # After valid input, check if the user's input matches the correct answer
         if user == random_question["answers"]:
             score += 1
-            print("Your answer is correct!")
-            print(f"Your Score is: {score}\n")
+            print(Fore.GREEN+"Your Answer is correct!")
+            print(Fore.GREEN+f"Your Score is: {score}\n")
         else:
             wrong_answers+=1
-            print("Wrong Answer\n")
+            print(Fore.RED+"Wrong Answer\n")
     
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
@@ -504,6 +506,8 @@ def main():
     print("6. No questions will be repeated during the game.")
     print("\nNote: Make sure to only enter A, B, C, or D as your answer.")
     print("\nLet's begin!\n")
+
+    
     # Call playGame() method
     playGame()
     

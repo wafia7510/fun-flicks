@@ -1,17 +1,17 @@
 questions = [
  {   # ques1
             "question": "Which of the following is a cat’s favorite pastime?",
-             "options": [
+            "options": [
                 "A. Knitting",
                 "B. Sleeping",
                 "C. Writing novels",
                 "D. Skydiving"
-            ],
+                ],
             "answers": "B"
  },
  {   # ques2
             "question": "What is a cat’s natural enemy?",
-             "options": [
+            "options": [
                 "A. Dogs",
                 "B. Laser pointers",
                 "C. Water",
@@ -21,7 +21,7 @@ questions = [
  },
  {   # ques3
             "question": "How many lives do cats famously have?",
-             "options": [
+            "options": [
                 "A. 3",
                 "B. 7",
                 "C. 9",
@@ -31,7 +31,7 @@ questions = [
  },
  {   # ques4
             "question": "Why do cats love to sit in boxes?",
-             "options": [
+            "options": [
                 "A. Because they’re secret ninjas",
                 "B. To protect themselves from imaginary enemies",
                 "C. They love confined spaces",
@@ -41,7 +41,7 @@ questions = [
  },
  {   # ques5
             "question": "What is a common reason for cats purring?",
-             "options": [
+            "options": [
                 "A. They are plotting",
                 "B. They are hungry",
                 "C. They are happy or content",
@@ -51,7 +51,7 @@ questions = [
  },
  {   # ques6
             "question": "Why do cats knead with their paws?",
-             "options": [
+            "options": [
                 "A. It’s their way of baking bread",
                 "B. To mark their territory",
                 "C. It reminds them of kittenhood",
@@ -61,7 +61,7 @@ questions = [
  },
  {   # ques7
             "question": "What is the scientific name for a house cat?",
-             "options": [
+            "options": [
                 "A. Felis lupus",
                 "B. Felis catus",
                 "C. Feline awesomeus",
@@ -71,7 +71,7 @@ questions = [
  },
  {   # ques8
             "question": "Which breed of cat is known for being hairless?",
-             "options": [
+            "options": [
                 "A. Siamese",
                 "B. Persian",
                 "C. Sphynx",
@@ -80,18 +80,18 @@ questions = [
             "answers": "C"
  },
  {   # ques9
-            "question": "Why do cats' eyes glow in the dark?",
-             "options": [
-                "A. They are powered by the moon",
-                "B. They have a layer called the tapetum lucidum that reflects light",
-                "C. They are using laser vision",
-                "D. It’s a special night-vision skill"
+    "question": "Why do cats' eyes glow in the dark?",
+    "options": [
+        "A. They are powered by the moon",
+        "B. They've a layer called the tapetum lucidum that reflects light",
+        "C. They are using laser vision",
+        "D. It’s a special night-vision skill"
             ],
-            "answers": "B"
+        "answers": "B"
  },
  {   # ques10
             "question": "What is a group of cats called?",
-             "options": [
+            "options": [
                 "A. A murder",
                 "B. A clowder",
                 "C. A herd",
@@ -101,7 +101,7 @@ questions = [
  },
  {   # ques11
             "question": "How far can a cat jump compared to its body length?",
-             "options": [
+            "options": [
                 "A. 1x its body length",
                 "B. 2x its body length",
                 "C. 5x its body length",
@@ -111,7 +111,7 @@ questions = [
  },
  {   # ques12
             "question": "What sense is the strongest in cats?",
-             "options": [
+            "options": [
                 "A. Sight",
                 "B. Hearing",
                 "C. Smell",
@@ -121,7 +121,7 @@ questions = [
  },
  {   # ques13
             "question": "Which breed of cat is known for its 'bobbed' tail?",
-             "options": [
+            "options": [
                 "A. Manx",
                 "B. Ragdoll",
                 "C. Abyssinian",
@@ -131,11 +131,11 @@ questions = [
  },
  {   # ques14
             "question": "What is the oldest cat in the world?",
-             "options": [
-            "A. 12 years old",
-            "B. 25 years old",
-            "C. 38 years old",
-            "D. 50 years old"
+            "options": [
+                "A. 12 years old",
+                "B. 25 years old",
+                "C. 38 years old",
+                "D. 50 years old"
             ],
             "answers": "C"
  },
@@ -150,27 +150,27 @@ questions = [
             "answers": "B"
  },
  {   # ques16
-            "question": "Why do cats sometimes bring their owners dead animals?",
-             "options": [
-                "A. They think you’re a bad hunter",
-                "B. To gross you out",
-                "C. To show off their skills",
-                "D. It’s a love offering"
+        "question": "Why do cats sometimes bring their owners dead animals?",
+        "options": [
+            "A. They think you’re a bad hunter",
+            "B. To gross you out",
+            "C. To show off their skills",
+            "D. It’s a love offering"
             ],
-            "answers": "A"
+        "answers": "A"
  },
  {   # ques17
            "question": "What’s a cat’s favorite toy?",
-            "options": [
+           "options": [
                 "A. Goldfish",
                 "B. A string",
                 "C. A computer mouse",
                 "D. A rubber duck"
             ],
-            "answers": "B"
+           "answers": "B"
  },
  {    # ques18
-           "question": "What’s the maximum speed a cat can run?",
+            "question": "What’s the maximum speed a cat can run?",
             "options": [
                 "A. 10 mph",
                 "B. 15 mph",
@@ -181,64 +181,65 @@ questions = [
  },
  {    # ques19
             "question": "What do cats use their whiskers for?",
-             "options": [
+            "options": [
              "A. Sensing their surroundings",
              "B. Decoration",
              "C. To keep food out of their mouth",
              "D. Showing off"
-          ],
-        "answers": "A"
+             ],
+            "answers": "A"
  },
  {    # ques20
             "question": "Which breed of cat is famous for its blue eyes?",
-             "options": [
-            "A. Persian",
-            "B. Siamese",
-            "C. British Shorthair",
-            "D. Maine Coon"
-        ],
-        "answers": "B"
-  },
-  {      # ques21
-               "question": "What’s the primary reason cats scratch things?",
-                "options": [
-                    "A. To sharpen their claws",
-                    "B. To annoy their owners",
-                    "C. To exercise",
-                    "D. To keep things clean"
+            "options": [
+                "A. Persian",
+                "B. Siamese",
+                "C. British Shorthair",
+                "D. Maine Coon"
+                ],
+            "answers":"B"
+ },
+ {    # ques21
+            "question": "What’s the primary reason cats scratch things?",
+            "options": [
+                "A. To sharpen their claws",
+                "B. To annoy their owners",
+                "C. To exercise",
+                "D. To keep things clean"
                 ],
             "answers": "A"
   },
-  {  # ques22
-        "question": "How many hours do cats typically sleep each day?",
-        "options": [
-            "A. 8 hours",
-            "B. 12 hours",
-            "C. 16 hours",
-            "D. 20 hours"
-          ],
-         "answers": "C"
+ {   # ques22
+            "question": "How many hours do cats typically sleep each day?",
+            "options": [
+                "A. 8 hours",
+                "B. 12 hours",
+                "C. 16 hours",
+                "D. 20 hours"
+                ],
+            "answers": "C"
   },
-  {  # ques23
+ {  # ques23
         "question": "Which famous artist was known for his love of cats?",
-         "options": [
+        "options": [
             "A. Pablo Picasso",
             "B. Vincent van Gogh",
             "C. Salvador Dali",
             "D. Leonardo da Vinci"
-          ],
-         "answers": "D"
+            ],
+        "answers": "D"
   },
-  {  # ques24
+ {  # ques24
         "question": "What do you call a cat with extra toes?",
-        "options": ["A. A polydactyl cat",
-                 "B. A double cat",
-                 "C. A mutant cat",
-                 "D. A super cat"
+        "options": [
+            "A. A polydactyl cat",
+            "B. A double cat",
+            "C. A mutant cat",
+            "D. A super cat"
         ],
         "answers": "A"
   },
-  {  # ques25
+ {  # ques25
         "question": " Why do cats like to rub against people and objects?",
         "options": [
             "A. They’re itchy",
@@ -248,7 +249,7 @@ questions = [
         ],
         "answers": "B"
   },
-  {  # ques26
+ {  # ques26
         "question": "What part of a cat is unique,like a human fingerprint?",
         "options": [
             "A. Tail",
@@ -261,7 +262,7 @@ questions = [
 
  {  # ques27
         "question": "What does it mean when a cat’s tail is puffed up?",
-         "options": [
+        "options": [
             "A. They are ready for a selfie",
             "B. They’re scared or agitated",
             "C. They’re about to fall asleep",
@@ -311,7 +312,7 @@ questions = [
  },
  {  # ques32
         "question": "Which breed is the “gentle giant” of cats?",
-         "options": [
+        "options": [
             "A. Siamese",
             "B. Maine Coon",
             "C. Sphynx",
@@ -391,7 +392,7 @@ questions = [
  },
  {  # ques40
         "question": " Which breed is known for being large and fluffy?",
-         "options": [
+        "options": [
             "A. Sphynx",
             "B. Ragdoll",
             "C. Maine Coon",
@@ -401,7 +402,7 @@ questions = [
  },
  {  # ques41
         "question": "What do cats do when they’re bored?",
-         "options": [
+        "options": [
             "A. Write poetry",
             "B. Stare at walls",
             "C. Sleep",
@@ -452,7 +453,7 @@ questions = [
  },
  {  # ques46
         "question": "What’s a cat’s favorite type of fish?",
-         "options": [
+        "options": [
             "A. Salmon",
             "B. Tuna",
             "C. Sardine",
@@ -462,7 +463,7 @@ questions = [
  },
  {  # ques47
         "question": "What sound does a content cat usually make?",
-         "options": [
+        "options": [
             "A. Bark",
             "B. Purr",
             "C. Chirp",
@@ -482,7 +483,7 @@ questions = [
  },
  {  # ques49
         "question": " What’s the smallest breed of cat?",
-         "options": [
+        "options": [
             "A. Munchkin",
             "B. Siamese",
             "C. Maine Coon",
@@ -492,7 +493,7 @@ questions = [
  },
  {  # ques50
         "question": "Why do cats love to knock things off tables?",
-         "options": [
+        "options": [
             "A. They are rebels",
             "B. To annoy you",
             "C. They’re testing gravity",

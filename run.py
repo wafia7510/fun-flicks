@@ -185,6 +185,7 @@ def main():
         play = play_again.upper()
         if play == "Y":
             reset_game()
+            clear()
             input("Press Enter to Play Game\n")
             playGame()
         elif play == "N":

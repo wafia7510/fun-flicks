@@ -1,6 +1,7 @@
 # Impoting random module, colorama and os
 import random
 from questions import questions
+import time
 import os
 import colorama
 from colorama import Fore, Back, Style
@@ -37,6 +38,7 @@ def playGame():
     answered.
     """
     print("Game begins!\n")
+    # Calling clear method to clear screen
     clear()
     global score
     global wrong_answers
@@ -56,21 +58,21 @@ def playGame():
             if random_question is None:   # If all questions are asked
                 print("All questions have been asked. Game over!")
                 break
-            print(f"Question #{counter+1}:  {random_question["question"]}")
+            print(f"Question #{counter+1}: {random_question["question"]}")
             # to loop through dictionary in questions for options
             for option in random_question["options"]:
                 print(option)
-            print("\n")
+            print("")
 
             user_input = get_validated_input()
             validate_input(user_input, random_question)
             counter += 1
 
         except (IndexError, KeyError) as e:
-            print(f"Error occurred while selecting question:  {e}")
+            print(f"Error occurred while selecting question: {e}")
             break  # Or continue to the next iteration if it's recoverable
         except Exception as e:
-            print(f"An unexpected error occurred:  {e}")
+            print(f"An unexpected error occurred: {e}")
             break
     # Call DisplayScore method
     displayScore()
@@ -109,7 +111,7 @@ def get_validated_input():
             else:
                 raise ValueError(f"{user_input} is Invalid input.")
         except ValueError as e:
-            print(f"{Fore.RED} Error:{e}.")
+            print(f"{Fore.RED}Error:{e}.")
             print(Fore.RED + "Please enter a valid option A/B/C/D.")
 
 
@@ -131,7 +133,8 @@ def validate_input(user, random_question):
             print(Fore.RED+"Wrong Answer\n")
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
-
+    time.sleep(1)
+    clear()
 # Definition of reset_game()
 
 

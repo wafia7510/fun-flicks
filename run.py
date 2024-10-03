@@ -1,4 +1,4 @@
-# Impoting random module, colorama and os
+# Impoting random module, colorama, os and time
 import random
 from questions import questions
 import time
@@ -125,7 +125,7 @@ def validate_input(user, random_question):
     global score
     global wrong_answers
     try:
-        # check if the user's input matches the correct answer
+        # Check if the user's input matches the correct answer
         if user == random_question["answers"]:
             score += 1
             print(Fore.GREEN+"Your Answer is correct!")

@@ -58,6 +58,7 @@ def playGame():
             if random_question is None:   # If all questions are asked
                 print("All questions have been asked. Game over!")
                 break
+            print(f"Your Current Score is: {score} ")
             print(f"Question #{counter+1}: {random_question["question"]}")
             # to loop through dictionary in questions for options
             for option in random_question["options"]:
@@ -113,6 +114,7 @@ def get_validated_input():
         except ValueError as e:
             print(f"{Fore.RED}Error:{e}.")
             print(Fore.RED + "Please enter a valid option A/B/C/D.")
+          
 
 
 # Definition validate_input(user,random_question) method
@@ -131,6 +133,7 @@ def validate_input(user, random_question):
         else:
             wrong_answers += 1
             print(Fore.RED+"Wrong Answer\n")
+            print(f"{Fore.RED}The correct answer is {random_question["answers"]}\n")
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
     time.sleep(1)
@@ -152,15 +155,15 @@ def displayScore():
     """
     global score, wrong_answers
     if score == 50:
-        print(f"{Fore.BLUE}Your total score is {score}")
-        print(Fore.BLUE + "Congratulations!")
+        print(f"{Fore.BLUE}{Back.WHITE}Your total score is {score}")
+        print(f"{Fore.BLUE}{Back.WHITE}Congratulations!")
         print(Fore.BLUE + "You have answered all questions right\n")
     elif score > 0 or score < 50:
-        print(f"{Fore.BLUE}Your total score is {score}")
-        print(f"{Fore.BLUE}You've answered {wrong_answers} wrong questions\n")
+        print(f"{Fore.BLUE}{Back.WHITE}Your total score is {score}")
+        print(f"{Fore.BLUE}{Back.WHITE}You've answered {wrong_answers} wrong questions\n")
     else:
-        print(Fore.BLUE + "Oops! You've answered all questions wrong")
-        print(Fore.BLUE + "Better luck next time!")
+        print(f"{Fore.BLUE}{Back.WHITE}Oops!You've answered all questions wrong")
+        print(f"{Fore.BLUE}{Back.WHITE}Better luck next time!")
 
     print(Fore.RED+"Game over\n")
 
@@ -192,7 +195,7 @@ def main():
             input("Press Enter to Play Game\n")
             playGame()
         elif play == "N":
-            print(Fore.BLUE + "\nThank you for playing Fun Flick! Goodbye!")
+            print(f"{Fore.BLUE}{Back.WHITE}Thank you for playing Fun Flick! Goodbye!")
             break  # to exit from the loop
         else:
             print(f"{Fore.RED}{play_again} is Invalid input.")

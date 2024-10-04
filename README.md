@@ -134,6 +134,31 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ![screenshot](documentation/flowchart.png)
 
+I have also used Mermaid flowchart to generate my flowchart.
+
+```mermaid
+flowchart TD
+    A(Start) --> B(Display welcome message and instruction)
+    B --> C(Get random questions)
+    C --> D(Prompt user for input options)
+    D --> E{Is input valid?}
+    E -- Yes --> F{Are there more questions?}
+    E -- No --> D
+    F -- Yes --> G(Is answer correct?)
+    G -- Yes --> H(Increment score)
+    G -- No --> I(Increment wrong answer)
+    F -- No --> J(Display score)
+    J --> K(Play again?)
+    K --> L{Is input valid?}
+    L -- No --> K
+    L -- Yes --> M{Is the answer yes}
+    M -- Yes --> N(Reset game)
+    M -- No --> O(Game Over)
+    N --> C
+```
+
+Source: [Mermaid](https://mermaid.live/edit#pako:eNp1kktvozAUhf-K5RWR0ohHKBGLVm1pM2matJrOZkZsLLghaLDN2KaZFOW_z-WRyF0MC8v4fPec60dLM5kDjemukodsz5QhP5JUEPzunHeD_xNydXVD7p2k1HXFjuQAVSY5EA5aswIIEzkphTaqyUwpxWQovu-rHpwlGKIQkZz8aUB3hB6Rhx5JnDcleW1Io0GRnVRoVjeGyNpmk559bFd6lD9YVea3p0F9RJX8BN1DT-2dAmL2gCOXOFxyv-BbOcQPS0-2w9LBGCb0ARvKpFKQmduxj6XNfXNWIlPAQRiiEQQbGv1XFnNQUhSj8cTKHdHnyxHbZs-9tnbeOoEVrBTnXta98vKfM3mxnNfW0rn5TVeHp3Te6BH0WLmxsa3zHTTeYcH4uaON5fzqLFEgrx-XHW2Hi08FnVIOirMyx9fVdmJKMY9DSmOc5kz9TmkqTsixxsj3o8hojK8IprSpc2YgKVmhGKfxjlUaV2smaNzSvzT2vGAWhIE393w_cq_D0J_SI43DaOa6Cz-IIs8NFlEQnab0U0p0cGcLd76YX6Poe2E36-1-9eKQqWRT7Mes0z_k7ugS)
+
 ### Functions
 
 

@@ -32,15 +32,14 @@ Documentation and Logs:
 
 ## Code Validation
 
-
 ### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | questions.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/wafia7510/fun-flicks/main/questions.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-|  | run.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/wafia7510/fun-flicks/main/run.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+|  | questions.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/wafia7510/fun-flicks/main/questions.py) | ![screenshot](documentation/question-validator.png) | |
+|  | run.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/wafia7510/fun-flicks/main/run.py) | ![screenshot](documentation/main-validator.png) | |
 
 ## Browser Compatibility
 
@@ -111,206 +110,95 @@ I
 
 ## Defensive Programming
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+In the Fun Flick quiz game, defensive programming techniques were implemented to ensure that the game runs smoothly, securely, and handles invalid inputs effectively.
 
-Defensive programming (defensive design) is extremely important!
+1. Input Validation:
 
-When building projects that accept user inputs or forms, you should always test the level of security for each.
-Examples of this could include (not limited to):
+    - Expected: Users are prompted to enter valid options (A, B, C, or D) for answers. Only these inputs are acceptable.
+    - Testing: Tested by entering a mix of valid and invalid inputs (e.g., numbers, special characters, or empty inputs).
+    - Result: The game correctly prompts for valid input when invalid options are entered.
+    - Fix: Any invalid inputs are handled gracefully, and users are shown an error message to re-enter a valid choice (A, B, C, or D).
 
-Forms:
-- Users cannot submit an empty form
-- Users must enter valid email addresses
+2. Handling Edge Cases:
 
-PP3 (Python-only):
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
+    - Expected: If all questions have been asked, the game should end properly and notify the user.
+    - Testing: Repeated the game until all questions were answered.
+    - Result: The game ends properly with no crashes and shows the final score.
+    - Fix: Ensured that no question is repeated, and when the quiz is over, the game displays the "Game Over" message.
 
-MS3 (Flask) | MS4/PP4/PP5 (Django):
-- Users cannot brute-force a URL to navigate to a restricted page
-- Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
+3. Preventing Crashes from Empty or Corrupt Question Data:
 
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
+    - Expected: If there are no questions in the database (empty list), the game should notify the player and not crash.
+    - Testing: Simulated an empty list of questions.
+    - Result: The game safely informs the player that no questions are available and exits.
+    - Fix: Added a check to handle empty or invalid question data without causing errors.
 
-You should include any manual tests performed, and the expected results/outcome.
+4. Replay Handling:
 
-Testing should be replicable.
-Ideally, tests cases should focus on each individual section of every page on the website.
-Each test case should be specific, objective, and step-wise replicable.
+    - Expected: Players should be able to restart the game or exit gracefully after completion.
+    - Testing: Tested the replay function by choosing both 'Y' and 'N' after game completion.
+    - Result: The game restarts or exits properly based on the user's input.
+    - Fix: Added input validation for the replay prompt, ensuring only 'Y' or 'N' is accepted.
 
-Instead of adding a general overview saying that everything works fine,
-consider documenting tests on each element of the page
-(ie. button clicks, input box validation, navigation links, etc.) by testing them in their happy flow,
-and also the bad/exception flow, mentioning the expected and observed results,
-and drawing a parallel between them where applicable.
 
-Consider using the following format for manual test cases:
 
-Expected Outcome / Test Performed / Result Received / Fixes Implemented
 
-- **Expected**: "Feature is expected to do X when the user does Y."
-- **Testing**: "Tested the feature by doing Y."
-- (either) **Result**: "The feature behaved as expected, and it did Y."
-- (or) **Result**: "The feature did not respond to A, B, or C."
-- **Fix**: "I did Z to the code because something was missing."
 
-Use the table below as a basic start, and expand on it using the logic above.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | Expectation | Test | Result | Fix | Screenshot |
 | --- | --- | --- | --- | --- | --- |
-| Home | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature01.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature02.png) |
-| About | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature03.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature04.png) |
-| Gallery | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature05.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature06.png) |
-| Contact | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/features/feature07.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/features/feature08.png) |
-| repeat for all remaining pages | x | x | x | x | x |
+| Answer Input | | | | | |
+| | User should enter A, B, C, or D | Tested with numbers, special characters, letters | Prompts for valid input if invalid characters| Added input validation for user answers | ![screenshot](documentation/features/feature01.png) |
+| Game Completion | | | | | |
+| | Game should end after all questions are answered | Played until the last question | Displays "Game Over" message, no crashes| Handled edge cases for game completion| ![screenshot](documentation/features/feature03.png) |
+| Empty Question Set | | | | | |
+| | Game should exit gracefully if no questions exist | Simulated with an empty question list |Shows "No questions available" and exits | Added checks for empty or corrupt question data | ![screenshot](documentation/features/feature05.png) |
+| Replay Option | | | | | |
+| | User should restart or exit based on input | Chose 'Y' to replay and 'N' to exit |Game restarts or exits based on input | Ensured valid input (Y or N) for replay| ![screenshot](documentation/features/feature07.png) |
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
 
-Another way of performing defensive testing is a simple Pass/Fail for each test.
-The assessors prefer the above method, with the full test explained, but this is also acceptable in most cases.
-
-When in doubt, use the above method instead, and delete the table below.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-| Page | User Action | Expected Result | Pass/Fail | Comments |
-| --- | --- | --- | --- | --- |
-| Home | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
-| Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
-| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
-| repeat for all remaining pages | x | x | x | x |
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ## Bugs
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+1. Issue with Input Validation:
 
-This section is primarily used for JavaScript and Python applications,
-but feel free to use this section to document any HTML/CSS bugs you might run into.
+    - Bug: When users entered an invalid input (e.g., numbers or special characters) instead of A, B, C, or D, the game crashed.
+    - Solution: Implemented input validation to ensure that only valid options (A, B, C, or D) are accepted. Invalid inputs prompt an error message, and the user is asked to try again.
 
-It's very important to document any bugs you've discovered while developing the project.
-Make sure to include any necessary steps you've implemented to fix the bug(s) as well.
+2. Question Repetition Bug:
 
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
+    - Bug: During the game, a question was occasionally repeated even though it was supposed to be asked only once.
+    - Solution: Fixed by keeping track of already asked questions using a list and ensuring each question is asked only once during the game session.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+3. Game Not Ending Properly:
 
-- JS Uncaught ReferenceError: `foobar` is undefined/not defined
+    - Bug: In some cases, the game would not end after all questions were answered, causing it to loop indefinitely.
+    - Solution: Corrected the logic to check if all questions had been answered and display the "Game Over" message appropriately.
 
-    ![screenshot](documentation/bugs/bug01.png)
+4. Display Formatting on Different Platforms:
 
-    - To fix this, I _____________________.
-
-- JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
-
-    ![screenshot](documentation/bugs/bug02.png)
-
-    - To fix this, I _____________________.
-
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bugs/bug03.png)
-
-    - To fix this, I _____________________.
-
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
-
-- Python `E501 line too long` (93 > 79 characters)
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
+    - The terminal output appeared misaligned on some systems due to differences in screen resolution and terminal window sizes.
+    - Solution: Adjusted formatting and used consistent spacing to ensure the game displays correctly across different systems (although primarily tested on Windows).
+    
+5. No Bugs Identified for Other Platforms:
+    - Since testing was only conducted on Windows, no bugs were identified for macOS or Linux systems, though these platforms have not been tested yet.
 
 ## Unfixed Bugs
+1. Limited Cross-Platform Testing:
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+    - Bug: The game has only been tested on Windows, and functionality on macOS or Linux is not guaranteed.
+    - Reason Unfixed: No access to macOS or Linux machines for comprehensive testing.
+    - Workaround: None currently, but the game is expected to work with minor adjustments. Users can report any issues they encounter on non-Windows systems.
 
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
+2. Game Freezing with Prolonged Idle Time:
 
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
+    - Bug: If the game is left idle for too long without user input, it occasionally becomes unresponsive.
+    - Reason Unfixed: Unable to replicate the issue consistently for debugging.
+    Workaround: Users should restart the game if it becomes unresponsive.
 
-Some examples:
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-    ![screenshot](documentation/bugs/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/bugs/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/bugs/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
 
 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
 

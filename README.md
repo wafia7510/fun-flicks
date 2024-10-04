@@ -30,7 +30,6 @@ source: [amiresponsive](https://ui.dev/amiresponsive?url=https://fun-flicks-3ac6
 
 ## Features
 
-IMPORTANT: Remember to always include a screenshot of each individual feature!
 ### Existing Features
 1. **A Series of Random Cat-Related Questions**
 - **Value:** This ensures variety in gameplay, keeping the user engaged with different questions each time they play.
@@ -39,7 +38,7 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
     - **Engagement:** Users are motivated to continue playing since they can expect new challenges each time.
     - **Knowledge Expansion:** It provides an opportunity for cat lovers to learn new things every time they play, building their knowledge with fun facts.
 
-![screenshot](documentation/features/feature01.png)
+![screenshot](documentation/random-question.png)
 
 2. **Multiple-Choice Answers (A, B, C, or D)**
 - **Value:** The multiple-choice format is easy to understand and makes the game accessible to users of all ages.
@@ -49,7 +48,7 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
     - **Instant Gratification:** With clear options, players get immediate feedback, which creates a sense of accomplishment when they choose the correct answer.
     - **Low Entry Barrier:** No prior knowledge of gaming is required, making it user-friendly for all skill levels.
 
-![screenshot](documentation/features/feature02.png)
+![screenshot](documentation/multiple-choice.png)
 
 3 **Score Tracking System**
 
@@ -60,25 +59,25 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
     - **Friendly Competition:** Players can compare their scores with friends or family, adding a social and competitive aspect to the game.
     - **Sense of Progress:** The score system provides a clear indication of the user’s knowledge growth, allowing them to see how much they’ve learned.
 
-![screenshot](documentation/features/feature03.png)
+   ![screenshot](documentation/score-tracker.png)
 
 4. **Fun Facts and Educational Content**
     **Value:** Provides both entertainment and educational content, making the quiz not only fun but also informative.
 
     **Benefits:**
-
      - **Learn While Having Fun:** Players can increase their knowledge about cats in an engaging and enjoyable way.
      - **Broad Appeal:** Cat lovers and trivia enthusiasts alike will find value in learning new and interesting facts about cats.
      - **Enriching Content:** The game enhances the user’s knowledge of cats without feeling like a learning task, turning education into an entertaining experience.
+     ![screenshot](documentation/quiz-list.png)
 
 5. **Simple and Clear Game Instructions**
    - **Value:** Clear and easy-to-understand instructions ensure that all users, including beginners, can start the game without confusion.
 
    - **Benefits:**
-
      - ***Quick Start:*** Users can jump right into the game without needing to figure out complex rules, which makes the experience smooth and enjoyable.
      - **No Frustration:** The straightforward instructions prevent any potential frustration, ensuring a positive user experience from the beginning.
      - **Wide Accessibility:** With easy rules, the game is accessible to players of all ages and experience levels.
+     ![screenshot](documentation/game-instructions.png)
 
 6. **Non-Repeating Questions Per Session**
 
@@ -88,80 +87,39 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
     - **Avoids Boredom:** The game avoids the boredom that could arise from repeated questions, keeping users engaged throughout the session.
     - **Extended Play Value:** Users are encouraged to play more since they won’t encounter the same questions multiple times in a single session, enhancing the overall experience.
    - **Replayability:** By offering fresh content every time, it gives players a reason to return and play again.
+   ![screenshot](documentation/asked-questions.png)
 
 
 
 ### Future Features
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
+- **Timer for Each Question**
+    - **Idea:** Introduce a countdown timer for each question to add a sense of urgency and excitement.
+    - **Value:** This will make the game more challenging by encouraging players to think quickly, adding an extra layer of difficulty.
+    - **Benefit:** Boosts engagement for trivia fans who enjoy time-based challenges, encouraging faster decision-making and adding a competitive edge.
 
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
+- **Difficulty Levels**
+    - **Idea:** Implement different difficulty levels (e.g., easy, medium, hard) that the player can select at the start of the game.
+    - **Value:** Allows users of varying knowledge levels and preferences to choose a challenge that suits them best.
+    - **Benefit:** Cat lovers who are trivia beginners can start with easier questions, while more experienced players can challenge themselves with tougher trivia.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+- **In-Game Hints**
 
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#1
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
-    - Any additional notes about this feature.
-- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
-    - Any additional notes about this feature.
+    - **Idea:** Implement a hint system that allows players to use a limited number of hints per game to help answer tough questions.
+    - **Value:** This feature makes the game accessible to users who may find some questions difficult, without making it too easy.
+    - **Benefit:** Enhances the user experience by offering a lifeline during challenging moments, ensuring players don’t feel stuck or frustrated.
+
 
 ## Tools & Technologies Used
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 START OF NOTES (to be deleted)
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- ⚠️⚠️ REQUIRED <-- delete me ⚠️⚠️
 - [![Markdown Builder](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://tim.2bn.dev/markdown-builder) used to generate README and TESTING templates.
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [![GitHub](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) used for secure online code storage.
-- ⚠️⚠️ IDE: CHOOSE ONLY ONE <-- delete me ⚠️⚠️
+
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
-- [![Codeanywhere](https://img.shields.io/badge/Codeanywhere-grey?logo=ebox&logoColor=7F3F98)](https://codeanywhere.com) used as a cloud-based IDE for development.
-- [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=visualstudiocode&logoColor=007ACC)](https://code.visualstudio.com) used as my local IDE for development.
-- ⚠️⚠️ LANGUAGES: CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
-- [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) used for the main site content.
-- [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
-- [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) used for user interaction on the site.
-- [![jQuery](https://img.shields.io/badge/jQuery-grey?logo=jquery&logoColor=0769AD)](https://jquery.com) used for user interaction on the site.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
-- ⚠️⚠️ DEPLOYMENT: CHOOSE ONLY ONE <-- delete me ⚠️⚠️
 - [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
-- ⚠️⚠️ CSS FRAMEWORKS: CHOOSE ONLY ONE (if applicable) <-- delete me ⚠️⚠️
-- [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [![Materialize](https://img.shields.io/badge/Materialize-grey?logo=materialdesign&logoColor=F5A5A8)](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- ⚠️⚠️ MISCELLANEOUS: CHOOSE ALL APPLICABLE <-- delete me ⚠️⚠️
-- [![Google Sheets](https://img.shields.io/badge/Google_Sheets-grey?logo=googlesheets&logoColor=34A853)](https://docs.google.com/spreadsheets) used for storing data from my Python app.
-- [![Jest](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) used for automated JavaScript testing.
-- [![Flask](https://img.shields.io/badge/Flask-grey?logo=flask&logoColor=000000)](https://flask.palletsprojects.com) used as the Python framework for the site.
-- [![MongoDB](https://img.shields.io/badge/MongoDB-grey?logo=mongodb&logoColor=47A248)](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-grey?logo=sqlalchemy&logoColor=D71F00)](https://www.sqlalchemy.org) used as the relational database management with Flask.
-- [![Django](https://img.shields.io/badge/Django-grey?logo=django&logoColor=092E20)](https://www.djangoproject.com) used as the Python framework for the site.
-- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-grey?logo=postgresql&logoColor=4169E1)](https://www.postgresql.org) used as the relational database management.
-- [![PostgreSQL by Code Institute](https://img.shields.io/badge/PostgreSQL_by_Code_Institute-grey?logo=okta&logoColor=F05223)](https://dbs.ci-dbs.net) used as the Postgres database from Code Institute.
-- [![ElephantSQL](https://img.shields.io/badge/ElephantSQL-grey?logo=postgresql&logoColor=36A6E2)](https://www.elephantsql.com) used as the Postgres database.
-- [![Cloudinary](https://img.shields.io/badge/Cloudinary-grey?logo=cloudinary&logoColor=3448C5)](https://cloudinary.com) used for online static file storage.
-- [![WhiteNoise](https://img.shields.io/badge/WhiteNoise-grey?logo=python&logoColor=FFFFFF)](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
-- [![Stripe](https://img.shields.io/badge/Stripe-grey?logo=stripe&logoColor=008CDD)](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [![Gmail API](https://img.shields.io/badge/Gmail_API-grey?logo=gmail&logoColor=EA4335)](https://mail.google.com) used for sending emails in my application.
-- [![MailChimp](https://img.shields.io/badge/MailChimp-grey?logo=mailchimp&logoColor=FFE01B)](https://mailchimp.com) used for sending newsletter subscriptions.
-- [![AWS S3](https://img.shields.io/badge/AWS_S3-grey?logo=amazons3&logoColor=569A31)](https://aws.amazon.com/s3) used for online static file storage.
-- [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
-- [![Figma](https://img.shields.io/badge/Figma-grey?logo=figma&logoColor=F24E1E)](https://www.figma.com) used for creating wireframes.
-- [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
-- [![Google Maps API](https://img.shields.io/badge/Google_Maps_API-grey?logo=googlemaps&logoColor=4285F4)](https://developers.google.com/maps) used as an interactive map on my site.
-- [![Leaflet](https://img.shields.io/badge/Leaflet-grey?logo=leaflet&logoColor=199900)](https://leafletjs.com) used as a free open-source interactive map on my site.
-- [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
 ## Data Model
@@ -170,53 +128,44 @@ Feel free to delete any unused items below as necessary.
 
 To follow best practice, a flowchart was created for the app's logic,
 and mapped out before coding began using a free version of
-[Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning) and/or [Draw.io](https://www.draw.io).
+[Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
 
 Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
 ![screenshot](documentation/flowchart.png)
 
-### Classes & Functions
+### Functions
 
-The program uses classes as a blueprint for the project's objects (OOP). This allows for the object to be reusable.
-
-```python
-class Person:
-    """ Insert docstring comments here """
-    def __init__(self, name, age, health, inventory):
-        self.name = name
-        self.age = age
-        self.health = health
-        self.inventory = inventory
-```
 
 The primary functions used on this application are:
 
-- `get_sales_data()`
-    - Get sales figures input from the user.
-- `validate_data()`
-    - Converts all string values into integers.
-- `update_worksheet()`
-    - Update the relevant worksheet with the data provided.
-- `calculate_surplus_data()`
-    - Compare sales with stock and calculate the surplus for each item type.
-- `get_last_5_entries_sales()`
-    - Collects columns of data from sales worksheet.
-- `calculate_stock_data()`
-    -  Calculate the average stock for each item type, adding 10%.
+- `playGame()`
+    - This function starts the game and handles the main gameplay loop. It randomly selects questions, displays them, collects user input, and checks if the input is correct.
+- `get_random_question()`
+    - This function retrieves a random question that hasn’t been asked yet in the current game session..
+- `get_validated_input()`
+    - This function handles the user input and ensures that it’s a valid option (A, B, C, or D). It continues prompting the user until a valid input is provided.
+- `validate_input()`
+    - This function checks if the user’s input matches the correct answer for the current question.
+- `clear()`
+    - Clears the terminal screen to keep the game interface clean and readable.
+- `reset_game()`
+    -  Resets the game’s state (like score, wrong answers, and asked questions) to allow the player to play a new game.
+- `displayScore()`
+    -  Displays the final score and the number of wrong answers at the end of the game.
 - `main()`
-    - Run all program functions.
+    - This is the entry point for the entire program. It sets up the game by providing instructions and calling the playGame() function.
+
 
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
 
-- `gspread`: used with the Google Sheets API
-- `google.oauth2.service_account`: used for the Google Sheets API credentials
-- `time`: used for adding time delays
-- `os`: used for adding a `clear()` function
-- `colorama`: used for including color in the terminal
-- `random`: used to get a random choice from a list
+- `from questions import questions`:  The questions object (a list of dictionaries) contains all the quiz questions, options, and correct answers. It serves as the main data source for a game, and it's used extensively in functions like playGame() and get_random_question().
+- `time`: The time. sleep(1) function is used in validate_input() to pause for one second after displaying whether the answer was correct or not, giving the player time to read the feedback before the screen is cleared.
+- `os`: The os.system() function in the clear() function clears the terminal screen. Depending on the operating system (nt for Windows, otherwise for Unix-like systems), it runs the appropriate command to clear the screen, making the game interface cleaner.
+- `colorama`: colorama.Fore, colorama.Back, and colorama.Style are used to colorize messages. For example, correct answers are displayed in green (Fore.GREEN), wrong answers in red (Fore.RED), and score-related messages use combinations like blue text on a white background (Fore.BLUE + Back.WHITE).
+- `random`: The random.randrange() function is used in get_random_question() to randomly select an index from the list of questions, ensuring that each question is chosen unpredictably.
 
 ## Testing
 
@@ -289,7 +238,7 @@ For either method, you will need to install any applicable packages found within
 
 - `pip3 install -r requirements.txt`.
 
-If using any confidential credentials, such as `CREDS.json` or `env.py` data, these will need to be manually added to your own newly created project as well.
+
 
 #### Cloning
 
@@ -322,93 +271,44 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+#### Local Development:
 
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
+- The project runs on  local machine using Python. Local deployment gives full control, making it easy to test, debug, and modify code quickly.
+- Dependencies are installed via requirements.txt, and the app is run directly with a command like python app.py.
+- Ideal for quick iterations and testing.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+#### Deployment (Heroku):
+- The app runs in a cloud environment, accessible via a public URL.
+- Requires a Procfile to specify how Heroku should run the app.
+- Dependencies are automatically installed by Heroku from requirements.txt.
+- Ideal for making the app available to a wider audience.
 
 ## Credits
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+- GeeksforGeeks: For guidance on Python concepts and implementation strategies.
+- W3Schools: For providing references on Python syntax and code structure.
+- ChatGPT: For assistance with code suggestions, problem-solving, and refining the project.
 
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 ### Content
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [W3Schools](https://www.w3schools.com/python/python_try_except.asp) | Add  Try except block in methods | How to Add try except block|
+| [W3Schools](https://www.w3schools.com/python/python_modules.asp) | colorama, os and question.py | How to import and use python modules |
+| [W3Schools](https://www.w3schools.com/python/python_scope.asp) | Scope| global keyword |
+| [geeksforgeeks](https://www.geeksforgeeks.org/clear-screen-python) | clear method | To clear screen
+| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) |How To Print Colored Text in Python (Colorama Tutorial) | using colorama to add colors for text |
 
-### Media
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-⚠️⚠️ EXAMPLE LINKS - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-| Source | Location | Type | Notes |
-| --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
 
 ### Acknowledgements
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-⚠️⚠️ EXAMPLES ONLY - REPLACE WITH YOUR OWN ⚠️⚠️
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+- I would like to thank my parents , for believing in me, and allowing me to make this transition into software development.
+

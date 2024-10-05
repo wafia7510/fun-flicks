@@ -18,6 +18,34 @@ wrong_answers = 0
 # List to check the matched question
 asked_questions = []
 
+available_questions=[]
+
+def select_level():
+    """Prompt the user to select a difficulty level."""
+    print("Select Difficulty Level:")
+    print("1. Easy")
+    print("2. Medium")
+    print("3. Hard")
+    
+    while True:
+        try:
+            choice = input("Enter 1, 2, or 3 for the desired difficulty level: ")
+            if choice == "1":
+                return "easy"
+            elif choice == "2":
+                return "medium"
+            elif choice == "3":
+                return "hard"
+            else:
+                raise ValueError("Invalid input, please enter 1, 2, or 3.")
+        except ValueError as e:
+            print(f"{Fore.RED}{e}")
+
+
+def filter_questions_by_difficulty(difficulty_level):
+    """Filter questions based on the selected difficulty."""
+    return [q for q in questions if q["difficulty"] == difficulty_level]
+
 
 def clear():
     """ Clear function to clean-up the terminal. """
@@ -42,19 +70,21 @@ def playGame():
     clear()
     global score
     global wrong_answers
+    difficulty = select_level()
+    available_questions = filter_questions_by_difficulty(difficulty)
 
     # Check if there are any questions
-    if not questions:
+    if not available_questions:
         print("No questions available.")
         return
-
+    
+    print(available_questions)
     # counter for iteration of list
     counter = 0
-    while counter < len(questions):
+    while counter < len(available_questions):
         try:
             # Select a random question that hasn't been asked yet
-            random_question = get_random_question()
-
+            random_question = get_random_question(available_questions)
             if random_question is None:   # If all questions are asked
                 print("All questions have been asked. Game over!")
                 break
@@ -80,20 +110,21 @@ def playGame():
 
 
 # Definition of get_random_question() method
-def get_random_question():
-    """Retrieve a random question that hasn't been asked yet."""
+def get_random_question(available_questions):
+    """Retrieve a random question that hasn't been asked
+        yet from given list"""
 
-    if len(asked_questions) == len(questions):
+    if asked_questions is None:
         return None  # All questions have been asked
 
     # Getting random number from 0-49
-    random_number = random.randrange(0, len(questions))
+    random_number = random.randrange(0, len(available_questions))
     while random_number in asked_questions:
-        random_number = random.randrange(0, len(questions))
+        random_number = random.randrange(0, len(available_questions))
     # Marking the question as asked
     asked_questions.append(random_number)
     # Get the elements of questions list
-    random_question = questions[random_number]
+    random_question = available_questions[random_number]
     return random_question
 
 
@@ -131,7 +162,7 @@ def validate_input(user, random_question):
             print(Fore.GREEN+f"Your Score is:  {score}\n")
         else:
             wrong_answers += 1
-            print(Fore.RED+"Wrong Answer\n")
+            print(Fore.RED+"Wrong Answer")
             print(f"{Fore.RED}The correct answer:{random_question["answers"]}")
             print("\n")
     except Exception as e:
@@ -143,10 +174,12 @@ def validate_input(user, random_question):
 
 def reset_game():
     """Reset the necessary variables to start the game fresh."""
-    global score, wrong_answers, asked_questions
+    global score, wrong_answers, asked_questions, available_questions
     score = 0
     wrong_answers = 0
     asked_questions = []
+    available_questions=[]
+    
 
 
 def displayScore():

@@ -43,68 +43,20 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Browser Compatibility
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+The Fun Flick game, deployed on Heroku, is a terminal-based application. It functions well across most modern browsers; however, there are some compatibility issues:
 
-Use this space to discuss testing the live/deployed site on various browsers.
+Tested Browsers: The game was tested on Google Chrome and Microsoft Edge, where it runs smoothly with no interruptions in performance.
 
-Consider testing AT LEAST 3 different browsers, if available on your system.
+Firefox Limitation: Unfortunately, Heroku's web console is currently not fully supported on Mozilla Firefox, and users may experience issues when trying to play the game in this browser. We recommend using Chrome or Edge for the best experience.
 
-You DO NOT need to use all of the browsers below, just pick any 3 (minimum).
 
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the tested browsers, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time.
-Some of these are paid services, but some are free.
-If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-Sample browser testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I've tested my deployed project on multiple browsers to check for compatibility issues.
-
-| Browser | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browsers/browser-chrome-home.png) | ![screenshot](documentation/browsers/browser-chrome-about.png) | ![screenshot](documentation/browsers/browser-chrome-contact.png) | ![screenshot](documentation/browsers/browser-chrome-etc.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browsers/browser-firefox-home.png) | ![screenshot](documentation/browsers/browser-firefox-about.png) | ![screenshot](documentation/browsers/browser-firefox-contact.png) | ![screenshot](documentation/browsers/browser-firefox-etc.png) | Works as expected |
-| Edge | ![screenshot](documentation/browsers/browser-edge-home.png) | ![screenshot](documentation/browsers/browser-edge-about.png) | ![screenshot](documentation/browsers/browser-chrome-edge.png) | ![screenshot](documentation/browsers/browser-edge-etc.png) | Works as expected |
-| Safari | ![screenshot](documentation/browsers/browser-safari-home.png) | ![screenshot](documentation/browsers/browser-safari-about.png) | ![screenshot](documentation/browsers/browser-safari-contact.png) | ![screenshot](documentation/browsers/browser-safari-etc.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browsers/browser-brave-home.png) | ![screenshot](documentation/browsers/browser-brave-about.png) | ![screenshot](documentation/browsers/browser-brave-contact.png) | ![screenshot](documentation/browsers/browser-brave-etc.png) | Works as expected |
-| Opera | ![screenshot](documentation/browsers/browser-opera-home.png) | ![screenshot](documentation/browsers/browser-opera-about.png) | ![screenshot](documentation/browsers/browser-opera-contact.png) | ![screenshot](documentation/browsers/browser-opera-etc.png) | Minor differences |
-| repeat for any other tested browsers | x | x | x | x | x |
 
 ## Responsiveness
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+As Fun Flick is a terminal-based game, it doesn't have a traditional responsive design like a website. However, the game was tested to ensure it works smoothly on different screen sizes and resolutions across various devices:
 
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
-
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-Sample responsiveness testing documentation:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-I
+- Desktop/Laptop: The game runs seamlessly in terminal environments on both large and small screens.
+- Mobile Devices: While the game is playable on mobile devices, some formatting may not display perfectly due to terminal constraints on smaller screens. For the best experience, it's recommended to play the game on a desktop or laptop.
 
 
 
@@ -139,9 +91,6 @@ In the Fun Flick quiz game, defensive programming techniques were implemented to
     - Testing: Tested the replay function by choosing both 'Y' and 'N' after game completion.
     - Result: The game restarts or exits properly based on the user's input.
     - Fix: Added input validation for the replay prompt, ensuring only 'Y' or 'N' is accepted.
-
-
-
 
 
 
@@ -198,13 +147,10 @@ Defensive programming was manually tested with the below user acceptance testing
     - Reason Unfixed: Unable to replicate the issue consistently for debugging.
     Workaround: Users should restart the game if it becomes unresponsive.
 
+3. Clear Method Limitation: The clear() function, which is used to clear the terminal screen after each question, works as intended in local environment Windows. However, when deployed on Heroku, it only clears the visible portion of the terminal output, rather than the entire terminal. This results in previous content still being visible as the user progresses through the game. Unfortunately, this is a limitation of Heroku’s terminal environment, and no permanent fix has been found to completely resolve this issue on the platform.
 
+4. Keyboard Interrupt (Ctrl+C) Stops Execution: Pressing certain key combinations, like Ctrl+C, during the game stops the normal execution and terminates the program unexpectedly. This is due to the keyboard interrupt signal that forces the application to quit. Currently, there is no handling implemented to catch this exception or prevent the termination, and it remains an unresolved issue.
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 > [!NOTE]  
 > There are no remaining bugs that I am aware of.

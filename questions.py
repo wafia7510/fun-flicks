@@ -7,7 +7,8 @@ questions = [
                 "C. Writing novels",
                 "D. Skydiving"
                 ],
-            "answers": "B"
+            "answers": "B",
+            "difficulty": "easy"
  },
  {   # ques2
             "question": "What is a cat’s natural enemy?",
@@ -17,7 +18,8 @@ questions = [
                 "C. Water",
                 "D. Birds"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques3
             "question": "How many lives do cats famously have?",
@@ -27,7 +29,8 @@ questions = [
                 "C. 9",
                 "D. 10"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques4
             "question": "Why do cats love to sit in boxes?",
@@ -37,7 +40,8 @@ questions = [
                 "C. They love confined spaces",
                 "D. They are planning world domination from inside the box"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques5
             "question": "What is a common reason for cats purring?",
@@ -47,7 +51,8 @@ questions = [
                 "C. They are happy or content",
                 "D. They are bored"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques6
             "question": "Why do cats knead with their paws?",
@@ -57,7 +62,8 @@ questions = [
                 "C. It reminds them of kittenhood",
                 "D. They enjoy it"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques7
             "question": "What is the scientific name for a house cat?",
@@ -67,7 +73,8 @@ questions = [
                 "C. Feline awesomeus",
                 "D. Purrfectus"
             ],
-            "answers": "B"
+            "answers": "B",
+            "difficulty": "easy"
  },
  {   # ques8
             "question": "Which breed of cat is known for being hairless?",
@@ -77,7 +84,8 @@ questions = [
                 "C. Sphynx",
                 "D. Bengal"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques9
     "question": "Why do cats' eyes glow in the dark?",
@@ -87,7 +95,8 @@ questions = [
         "C. They are using laser vision",
         "D. It’s a special night-vision skill"
             ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "easy"
  },
  {   # ques10
             "question": "What is a group of cats called?",
@@ -97,7 +106,8 @@ questions = [
                 "C. A herd",
                 "D. A pod"
             ],
-            "answers": "B"
+            "answers": "B",
+            "difficulty": "easy"
  },
  {   # ques11
             "question": "How far can a cat jump compared to its body length?",
@@ -107,7 +117,8 @@ questions = [
                 "C. 5x its body length",
                 "D. 10x its body length"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques12
             "question": "What sense is the strongest in cats?",
@@ -117,7 +128,8 @@ questions = [
                 "C. Smell",
                 "D. Taste"
             ],
-            "answers": "B"
+            "answers": "B",
+            "difficulty": "easy"
  },
  {   # ques13
             "question": "Which breed of cat is known for its 'bobbed' tail?",
@@ -127,7 +139,8 @@ questions = [
                 "C. Abyssinian",
                 "D. Scottish Fold"
             ],
-            "answers": "A"
+            "answers": "A",
+            "difficulty": "easy"
  },
  {   # ques14
             "question": "What is the oldest cat in the world?",
@@ -137,7 +150,8 @@ questions = [
                 "C. 38 years old",
                 "D. 50 years old"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "easy"
  },
  {   # ques15
             "question": "What’s a cat’s secret superpower?",
@@ -147,7 +161,8 @@ questions = [
                 "C. Turning invisible at will",
                 "D. Speaking every language"
             ],
-            "answers": "B"
+            "answers": "B",
+            "difficulty": "easy"
  },
  {   # ques16
         "question": "Why do cats sometimes bring their owners dead animals?",
@@ -157,7 +172,8 @@ questions = [
             "C. To show off their skills",
             "D. It’s a love offering"
             ],
-        "answers": "A"
+        "answers": "A",
+        "difficulty": "medium"
  },
  {   # ques17
            "question": "What’s a cat’s favorite toy?",
@@ -167,7 +183,8 @@ questions = [
                 "C. A computer mouse",
                 "D. A rubber duck"
             ],
-           "answers": "B"
+           "answers": "B",
+           "difficulty": "medium"
  },
  {    # ques18
             "question": "What’s the maximum speed a cat can run?",
@@ -177,7 +194,8 @@ questions = [
                 "C. 30 mph",
                 "D. 50 mph"
             ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "medium"
  },
  {    # ques19
             "question": "What do cats use their whiskers for?",
@@ -187,7 +205,8 @@ questions = [
              "C. To keep food out of their mouth",
              "D. Showing off"
              ],
-            "answers": "A"
+            "answers": "A",
+            "difficulty": "medium"
  },
  {    # ques20
             "question": "Which breed of cat is famous for its blue eyes?",
@@ -197,7 +216,8 @@ questions = [
                 "C. British Shorthair",
                 "D. Maine Coon"
                 ],
-            "answers":"B"
+            "answers":"B",
+            "difficulty": "medium"
  },
  {    # ques21
             "question": "What’s the primary reason cats scratch things?",
@@ -207,7 +227,8 @@ questions = [
                 "C. To exercise",
                 "D. To keep things clean"
                 ],
-            "answers": "A"
+            "answers": "A",
+            "difficulty": "medium"
   },
  {   # ques22
             "question": "How many hours do cats typically sleep each day?",
@@ -217,7 +238,8 @@ questions = [
                 "C. 16 hours",
                 "D. 20 hours"
                 ],
-            "answers": "C"
+            "answers": "C",
+            "difficulty": "medium"
   },
  {  # ques23
         "question": "Which famous artist was known for his love of cats?",
@@ -227,7 +249,8 @@ questions = [
             "C. Salvador Dali",
             "D. Leonardo da Vinci"
             ],
-        "answers": "D"
+        "answers": "D",
+        "difficulty": "medium"
   },
  {  # ques24
         "question": "What do you call a cat with extra toes?",
@@ -237,7 +260,8 @@ questions = [
             "C. A mutant cat",
             "D. A super cat"
         ],
-        "answers": "A"
+        "answers": "A",
+        "difficulty": "medium"
   },
  {  # ques25
         "question": " Why do cats like to rub against people and objects?",
@@ -247,7 +271,8 @@ questions = [
             "C. They’re trying to knock you over",
             "D. It’s a power move"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "medium"
   },
  {  # ques26
         "question": "What part of a cat is unique,like a human fingerprint?",
@@ -257,7 +282,8 @@ questions = [
             "C. Paw pads",
             "D. Nose"
         ],
-        "answers": "D"
+        "answers": "D",
+        "difficulty": "medium"
  },
 
  {  # ques27
@@ -268,7 +294,8 @@ questions = [
             "C. They’re about to fall asleep",
             "D. It’s cold outside"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "medium"
  },
  {  # ques28
         "question": "Why do cats love to chase lasers?",
@@ -278,7 +305,8 @@ questions = [
             "C. They want to catch the light",
             "D. They like shiny things"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "medium"
  },
  {  # ques29
         "question": "What is a “catnap”?",
@@ -288,7 +316,8 @@ questions = [
             "C. A confused sleep",
             "D. A lazy day"
         ],
-        "answers": "A"
+        "answers": "A",
+        "difficulty": "medium"
  },
  {  # ques30
         "question": "How many muscles do cats have in their ears?",
@@ -298,7 +327,8 @@ questions = [
             "C. 32",
             "D. 40"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "medium"
  },
  {  # ques31
         "question": "What’s a cat’s most sensitive body part?",
@@ -308,7 +338,8 @@ questions = [
             "C. Paws",
             "D. Tail"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques32
         "question": "Which breed is the “gentle giant” of cats?",
@@ -318,7 +349,8 @@ questions = [
             "C. Sphynx",
             "D. British Shorthair"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques33
         "question": "Which type of cat is known for its folded ears?",
@@ -328,7 +360,8 @@ questions = [
             "C. Burmese",
             "D. Abyssinian"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques34
         "question": "How long is a cat’s pregnancy?",
@@ -338,7 +371,8 @@ questions = [
             "C. 3 months",
             "D. 6 months"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques35
         "question": "Why do cats chase their tails?",
@@ -348,7 +382,8 @@ questions = [
             "C. They think it’s prey",
             "D. To confuse you"
         ],
-        "answers": "A"
+        "answers": "A",
+        "difficulty": "hard"
  },
  {  # ques36
         "question": "What’s the technical term for cat hairballs?",
@@ -358,7 +393,8 @@ questions = [
             "C. Trichobezoars",
             "D. Fluffballs"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
  {  # ques37
         "question": "What’s the longest recorded cat jump?",
@@ -368,7 +404,8 @@ questions = [
             "C. 12 feet",
             "D. 15 feet"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
  {  # ques38
         "question": "What’s the most common cat coat color?",
@@ -378,7 +415,8 @@ questions = [
             "C. White",
             "D. Tabby"
         ],
-        "answers": "D"
+        "answers": "D",
+        "difficulty": "hard"
  },
  {  # ques39
         "question": "Why do cats wag their tails?",
@@ -388,7 +426,8 @@ questions = [
             "C. They’re concentrating",
             "D. They’re tired"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques40
         "question": " Which breed is known for being large and fluffy?",
@@ -398,7 +437,8 @@ questions = [
             "C. Maine Coon",
             "D. Siamese"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
  {  # ques41
         "question": "What do cats do when they’re bored?",
@@ -408,7 +448,8 @@ questions = [
             "C. Sleep",
             "D. Play with imaginary friends"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
  {  # ques42
         "question": "Why do cats sometimes stare at you without blinking?",
@@ -418,7 +459,8 @@ questions = [
             "C. It’s a sign of affection",
             "D. They are confused by your human ways"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
 
  {  # ques43
@@ -429,7 +471,8 @@ questions = [
             "C. Turkish Van",
             "D. Persian"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
  {  # ques44
         "question": "Why do some cats “chirp” at birds?",
@@ -439,7 +482,8 @@ questions = [
             "C. They are talking to birds",
             "D. They are practicing hunting calls"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques45
         "question": "What breed of cat is most likely to enjoy fetching?",
@@ -449,7 +493,8 @@ questions = [
             "C. Maine Coon",
             "D. British Shorthair"
         ],
-        "answers": "A"
+        "answers": "A",
+        "difficulty": "hard"
  },
  {  # ques46
         "question": "What’s a cat’s favorite type of fish?",
@@ -459,7 +504,8 @@ questions = [
             "C. Sardine",
             "D. All of the above"
         ],
-        "answers": "D"
+        "answers": "D",
+        "difficulty": "hard"
  },
  {  # ques47
         "question": "What sound does a content cat usually make?",
@@ -469,7 +515,8 @@ questions = [
             "C. Chirp",
             "D. Squeak"
         ],
-        "answers": "B"
+        "answers": "B",
+        "difficulty": "hard"
  },
  {  # ques48
         "question": "Which ancient civilization worshipped cats?",
@@ -479,7 +526,8 @@ questions = [
             "C. Egyptians",
             "D. Mayans"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  },
  {  # ques49
         "question": " What’s the smallest breed of cat?",
@@ -489,7 +537,8 @@ questions = [
             "C. Maine Coon",
             "D. Abyssinian"
         ],
-        "answers": "A"
+        "answers": "A",
+        "difficulty": "hard"
  },
  {  # ques50
         "question": "Why do cats love to knock things off tables?",
@@ -499,6 +548,7 @@ questions = [
             "C. They’re testing gravity",
             "D. They enjoy destruction"
         ],
-        "answers": "C"
+        "answers": "C",
+        "difficulty": "hard"
  }
 ]

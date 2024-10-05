@@ -187,11 +187,11 @@ def displayScore():
     Display the score and wrong answers
     """
     global score, wrong_answers
-    if score <=15:
+    if score >=15:
         print(f"{Fore.GREEN}Your total score is {score}")
         print(f"{Fore.GREEN}Congratulations!")
         print(Fore.GREEN + "You have answered all questions right\n")
-    elif score > 0 or (score < 15 and score < 20):
+    elif score > 0:
         print(f"{Fore.GREEN}Your total score is {score}")
         print(f"{Fore.GREEN}Wrong answers are: {wrong_answers}\n")
         print("Better Luck Next Time")

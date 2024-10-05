@@ -29,7 +29,7 @@ def select_level():
     
     while True:
         try:
-            choice = input("Enter 1, 2, or 3 for the desired difficulty level: ")
+            choice = input("Enter 1, 2, or 3 for the desired difficulty level:\n")
             if choice == "1":
                 return "easy"
             elif choice == "2":
@@ -71,6 +71,7 @@ def playGame():
     global score
     global wrong_answers
     difficulty = select_level()
+    global available_questions
     available_questions = filter_questions_by_difficulty(difficulty)
 
     # Check if there are any questions
@@ -78,7 +79,6 @@ def playGame():
         print("No questions available.")
         return
     
-    print(available_questions)
     # counter for iteration of list
     counter = 0
     while counter < len(available_questions):
@@ -114,8 +114,8 @@ def get_random_question(available_questions):
     """Retrieve a random question that hasn't been asked
         yet from given list"""
 
-    if asked_questions is None:
-        return None  # All questions have been asked
+    if len(asked_questions) == len(available_questions):
+        return None 
 
     # Getting random number from 0-49
     random_number = random.randrange(0, len(available_questions))
@@ -187,22 +187,24 @@ def displayScore():
     Display the score and wrong answers
     """
     global score, wrong_answers
-    if score == 50:
-        print(f"{Fore.BLUE}{Back.WHITE}Your total score is {score}")
-        print(f"{Fore.BLUE}{Back.WHITE}Congratulations!")
-        print(Fore.BLUE + "You have answered all questions right\n")
-    elif score > 0 or score < 50:
-        print(f"{Fore.BLUE}{Back.WHITE}Your total score is {score}")
-        print(f"{Fore.BLUE}{Back.WHITE}Wrong answers are: {wrong_answers}\n")
+    if score <=15:
+        print(f"{Fore.GREEN}Your total score is {score}")
+        print(f"{Fore.GREEN}Congratulations!")
+        print(Fore.GREEN + "You have answered all questions right\n")
+    elif score > 0 or (score < 15 and score < 20):
+        print(f"{Fore.GREEN}Your total score is {score}")
+        print(f"{Fore.GREEN}Wrong answers are: {wrong_answers}\n")
+        print("Better Luck Next Time")
     else:
-        print(f"{Fore.BLUE}{Back.WHITE}Oops!The cats won this round!")
-        print(f"{Fore.BLUE}{Back.WHITE}Try again and show them who's boss!")
+        print(f"{Fore.GREEN}Oops!The cats won this round!")
+        print(f"{Fore.GREEN}Try again and show them who's boss!")
 
     print(Fore.RED+"Game over\n")
 
 
 # Definition of main() method
 def main():
+    clear()
     """Main entry point of the program."""
     print("Welcome to Fun Flick - The Ultimate Quiz Game!")
     print("\nHow to Play Fun Flick: ")
@@ -219,6 +221,8 @@ def main():
     # Call playGame() method
     playGame()
     while True:
+        time.sleep(3)
+        clear()
         print("Do you want to play again this game")
         play_again = input("Enter 'Y' to play game or 'N' to exit from game\n")
         play = play_again.upper()

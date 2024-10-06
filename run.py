@@ -89,7 +89,7 @@ def playGame():
             print(f"You will be asked {len(available_questions)} questions")
             print(f"Current Score is:{Fore.GREEN}{score}")
             print(f"level is:{Fore.GREEN}{difficulty.capitalize()}\n")
-            print(f"Question #{counter+1}:{random_question["question"]}")
+            print(f"Question#{counter+1}: {random_question["question"]}")
             # to loop through dictionary in questions for options
             for option in random_question["options"]:
                 print(option)
@@ -100,10 +100,10 @@ def playGame():
             counter += 1
 
         except (IndexError, KeyError) as e:
-            print(f"Error occurred while selecting question: {e}")
+            print(f"{Fore.RED}Error occurred while selecting question: {e}")
             break  # Or continue to the next iteration if it's recoverable
         except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+            print(f"{Fore.RED}An unexpected error occurred: {e}")
             break
 
 
@@ -136,7 +136,7 @@ def get_validated_input():
             if user in answers_list:
                 return user
             else:
-                raise ValueError(f"{user_input} is Invalid input.")
+                raise ValueError(f" {user_input} is Invalid input.")
         except ValueError as e:
             print(f"{Fore.RED}Error:{e}.")
             print(Fore.RED + "Please enter a valid option A/B/C/D.")
@@ -157,7 +157,7 @@ def validate_input(user, random_question):
         else:
             wrong_answers += 1
             print(Fore.RED+"Wrong Answer")
-            print(f"{Fore.RED}The correct answer:{random_question["answers"]}")
+            print(f"{Fore.RED}The answer is :{random_question["answers"]}")
             print("\n")
     except Exception as e:
         print(f"An error occurred while validating input: {e}")
@@ -219,11 +219,12 @@ def main():
         time.sleep(3)
         clear()
         print("Do you want to play again this game")
-        play_again = input("Enter 'Y' to play game or 'N' to exit from game\n")
+        play_again = input("Enter 'Y' to play game or 'N' to exit from game")
         play = play_again.upper()
         if play == "Y":
             reset_game()
             clear()
+            print("\n")
             input("Press Enter to Play Game\n")
             playGame()
             displayScore()
@@ -239,3 +240,4 @@ def main():
 
 # Call main() method to start game
 main()
+

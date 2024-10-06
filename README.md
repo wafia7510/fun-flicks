@@ -98,10 +98,6 @@ source: [amiresponsive](https://ui.dev/amiresponsive?url=https://fun-flicks-3ac6
     - **Value:** This will make the game more challenging by encouraging players to think quickly, adding an extra layer of difficulty.
     - **Benefit:** Boosts engagement for trivia fans who enjoy time-based challenges, encouraging faster decision-making and adding a competitive edge.
 
-- **Difficulty Levels**
-    - **Idea:** Implement different difficulty levels (e.g., easy, medium, hard) that the player can select at the start of the game.
-    - **Value:** Allows users of varying knowledge levels and preferences to choose a challenge that suits them best.
-    - **Benefit:** Cat lovers who are trivia beginners can start with easier questions, while more experienced players can challenge themselves with tougher trivia.
 
 - **In-Game Hints**
 
@@ -118,7 +114,7 @@ source: [amiresponsive](https://ui.dev/amiresponsive?url=https://fun-flicks-3ac6
 
 - [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
 - [![Python](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) used as the back-end programming language.
-- [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) used for hosting the deployed front-end site.
+
 - [![Heroku](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) used for hosting the deployed back-end site.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
@@ -180,6 +176,8 @@ The primary functions used on this application are:
     -  Displays the final score and the number of wrong answers at the end of the game.
 - `main()`
     - This is the entry point for the entire program. It sets up the game by providing instructions and calling the playGame() function.
+- `filter_questions_by_difficulty(difficulty)`
+    - This method filters questions based on the player's selected difficulty (easy, medium, or hard). It returns a list of questions that match the specified difficulty level, allowing the quiz to present appropriate questions to the player. This ensures that the game's difficulty aligns with the user's choice.
 
 
 ### Imports
@@ -301,12 +299,14 @@ You can fork this repository by using the following steps:
 - The project runs on  local machine using Python. Local deployment gives full control, making it easy to test, debug, and modify code quickly.
 - Dependencies are installed via requirements.txt, and the app is run directly with a command like python app.py.
 - Ideal for quick iterations and testing.
+- When running the app locally on a machine using Python, the colorama library works perfectly. It ensures that terminal output is styled with colors for better readability and user experience. The colors appear vibrant and as expected in the terminal.
 
 #### Deployment (Heroku):
 - The app runs in a cloud environment, accessible via a public URL.
 - Requires a Procfile to specify how Heroku should run the app.
 - Dependencies are automatically installed by Heroku from requirements.txt.
 - Ideal for making the app available to a wider audience.
+- Upon deploying the app to Heroku, colorama was still functional, but the colors appeared dim or less vibrant. This is likely due to differences in how Heroku handles terminal output in its cloud environment compared to a local machine. In cloud-hosted environments like Heroku, the terminal may not support rich color output in the same way as local systems.
 
 ## Credits
 

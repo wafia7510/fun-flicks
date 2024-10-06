@@ -4,32 +4,6 @@
 > Return back to the [README.md](README.md) file.
 
 
-User Experience Testing:
-
-- Usability Testing:
-    - Users interacted with the game through the terminal, and feedback was gathered to ensure the game instructions were clear and easy to follow. No major issues were encountered regarding user input or gameplay flow.
-    - **Outcome:** The game is intuitive, with clear instructions for users to input answers correctly.
-- Accessibility Testing: The game handles invalid inputs gracefully and provides appropriate error messages. The terminal output was tested for readability, ensuring that users can easily understand and follow the game prompts.
-
-Compatibility Testing:
-
-- Platform Compatibility: Since this is a terminal-based game, testing was conducted on Windows to ensure consistent performance and smooth gameplay.
-- Device Compatibility: The game runs effectively on various devices, including laptops and desktops, with no functional issues detected.
-
-Performance Testing:
-- Speed Testing: Since the game runs on Heroku, response times for starting new game sessions were tested and confirmed to be quick and responsive.
-
-
-Regression Testing:
-
-- After each update or bug fix, regression testing was performed to ensure that the core functionalities, such as score calculation, random question generation, and input validation, continued to work without any issues.
-
-Documentation and Logs:
-
-- Logs were maintained for testing procedures, including usability tests and any bugs encountered during development. Fixes were implemented promptly to ensure the game remained functional.
-
-
-
 ## Code Validation
 
 ### Python
@@ -98,58 +72,66 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page | Expectation | Test | Result | Fix | Screenshot |
 | --- | --- | --- | --- | --- | --- |
-| Answer Input | | | | | |
-| | User should enter A, B, C, or D | Tested with numbers, special characters, letters | Prompts for valid input if invalid characters| Added input validation for user answers | ![screenshot](documentation/features/feature01.png) |
-| Game Completion | | | | | |
-| | Game should end after all questions are answered | Played until the last question | Displays "Game Over" message, no crashes| Handled edge cases for game completion| ![screenshot](documentation/features/feature03.png) |
-| Empty Question Set | | | | | |
-| | Game should exit gracefully if no questions exist | Simulated with an empty question list |Shows "No questions available" and exits | Added checks for empty or corrupt question data | ![screenshot](documentation/features/feature05.png) |
-| Replay Option | | | | | |
-| | User should restart or exit based on input | Chose 'Y' to replay and 'N' to exit |Game restarts or exits based on input | Ensured valid input (Y or N) for replay| ![screenshot](documentation/features/feature07.png) |
+| | | | | | |
+| Answer Input| User should enter A, B, C, or D | Tested with numbers, special characters, letters | Prompts for valid input if invalid characters| Added input validation for user answers | ![screenshot](documentation/number-sign-validation.png) |
+|  | | | | | |
+| Game Completion | Game should end after all questions are answered | Played until the last question | Displays "Game Over" message, no crashes| Handled edge cases for game completion| ![screenshot](documentation/game-over.png) |
+| Difficulty Level Input | Players should be able to select a difficulty level by entering 1 (Easy), 2 (Medium), or 3 (Hard).| The difficulty level selection was tested with valid inputs (1, 2, 3) as well as invalid inputs like letters, numbers outside the expected range, special characters, and empty inputs.|  If the player enters an invalid input (e.g., letters, other numbers, or symbols), the game displays an error message and prompts the player to enter a valid option again without crashing or proceeding with an incorrect input.|  Input validation was added to ensure only 1, 2, or 3 is accepted. Invalid inputs trigger a message like "Invalid input, please enter 1, 2, or 3."| ![screenshot](documentation/level.png) |
+| Empty Question Set | Game should exit gracefully if no questions exist | Simulated with an empty question list |Shows "No questions available" and exits | Added checks for empty or corrupt question data | ![screenshot](documentation/no-question.png) |
+|  | | | | | |
+| Replay Option | User should restart or exit based on input | Chose 'Y' to replay and 'N' to exit |Game restarts or exits based on input | Ensured valid input (Y or N) for replay| ![screenshot](documentation/restart-exit.png) |
 
 
 
 ## Bugs
 
-1. Issue with Input Validation:
+1. **Issue with Input Validation:**
 
     - Bug: When users entered an invalid input (e.g., numbers or special characters) instead of A, B, C, or D, the game crashed.
     - Solution: Implemented input validation to ensure that only valid options (A, B, C, or D) are accepted. Invalid inputs prompt an error message, and the user is asked to try again.
+    ![screenshot](documentation/validation-input-check.png)
 
-2. Question Repetition Bug:
+2. **Question Repetition Bug:**
 
     - Bug: During the game, a question was occasionally repeated even though it was supposed to be asked only once.
     - Solution: Fixed by keeping track of already asked questions using a list and ensuring each question is asked only once during the game session.
+    ![screenshot](documentation/asked-questions.png)
 
-3. Game Not Ending Properly:
+3. **Game Not Ending Properly:**
 
     - Bug: In some cases, the game would not end after all questions were answered, causing it to loop indefinitely.
     - Solution: Corrected the logic to check if all questions had been answered and display the "Game Over" message appropriately.
+    ![screenshot](documentation/checking-all-questions-asked.png)
 
-4. Display Formatting on Different Platforms:
+4. **Display Formatting on Different Platforms:**
 
     - The terminal output appeared misaligned on some systems due to differences in screen resolution and terminal window sizes.
     - Solution: Adjusted formatting and used consistent spacing to ensure the game displays correctly across different systems (although primarily tested on Windows).
     
-5. No Bugs Identified for Other Platforms:
+5. **No Bugs Identified for Other Platforms:**
     - Since testing was only conducted on Windows, no bugs were identified for macOS or Linux systems, though these platforms have not been tested yet.
 
 ## Unfixed Bugs
-1. Limited Cross-Platform Testing:
+1. **Limited Cross-Platform Testing:**
 
     - Bug: The game has only been tested on Windows, and functionality on macOS or Linux is not guaranteed.
     - Reason Unfixed: No access to macOS or Linux machines for comprehensive testing.
     - Workaround: None currently, but the game is expected to work with minor adjustments. Users can report any issues they encounter on non-Windows systems.
 
-2. Game Freezing with Prolonged Idle Time:
+2. **Game Freezing with Prolonged Idle Time:**
 
     - Bug: If the game is left idle for too long without user input, it occasionally becomes unresponsive.
     - Reason Unfixed: Unable to replicate the issue consistently for debugging.
     Workaround: Users should restart the game if it becomes unresponsive.
 
-3. Clear Method Limitation: The clear() function, which is used to clear the terminal screen after each question, works as intended in local environment Windows. However, when deployed on Heroku, it only clears the visible portion of the terminal output, rather than the entire terminal. This results in previous content still being visible as the user progresses through the game. Unfortunately, this is a limitation of Heroku’s terminal environment, and no permanent fix has been found to completely resolve this issue on the platform.
+3. **Clear Method Limitation:** 
+    - The clear() function, which is used to clear the terminal screen after each question, works as intended in local environment Windows. However, when deployed on Heroku, it only clears the visible portion of the terminal output, rather than the entire terminal. This results in previous content still being visible as the user progresses through the game. Unfortunately, this is a limitation of Heroku’s terminal environment, and no permanent fix has been found to completely resolve this issue on the platform.
 
-4. Keyboard Interrupt (Ctrl+C) Stops Execution: Pressing certain key combinations, like Ctrl+C, during the game stops the normal execution and terminates the program unexpectedly. This is due to the keyboard interrupt signal that forces the application to quit. Currently, there is no handling implemented to catch this exception or prevent the termination, and it remains an unresolved issue.
+4. **Keyboard Interrupt (Ctrl+C) Stops Execution:** 
+    - Pressing certain key combinations, like Ctrl+C, during the game stops the normal execution and terminates the program unexpectedly. This is due to the keyboard interrupt signal that forces the application to quit. Currently, there is no handling implemented to catch this exception or prevent the termination, and it remains an unresolved issue.
+
+5. **Input Behavior on Different Platforms:**
+    - Apple Users (macOS): Users can smoothly enter their input and play the game without issues.Android Users (via terminal emulators): There may be some input inconsistencies, especially with terminal emulators on mobile devices, which could result in issues during gameplay. This may affect the input prompt behavior, but the core functionality remains intact.
 
 
 > [!NOTE]  

@@ -68,10 +68,8 @@ def playGame():
     print("Game begins!\n")
     # Calling clear method to clear screen
     clear()
-    global score
-    global wrong_answers
-    difficulty = select_level()
-    global available_questions
+    global score, wrong_answers, available_questions, asked_questions
+    difficulty = select_level() 
     available_questions = filter_questions_by_difficulty(difficulty)
 
     # Check if there are any questions
@@ -81,13 +79,14 @@ def playGame():
     clear()
     # counter for iteration of list
     counter = 0
-    while counter < len(available_questions):
+    while counter <= len(available_questions):
         try:
             # Select a random question that hasn't been asked yet
             random_question = get_random_question(available_questions)
-            if random_question is None:   # If all questions are asked
-                print("All questions have been asked. Game over!")
+            if random_question is None:
+                print(f"{Fore.RED}All questions have been asked.")
                 break
+            print(f"You will be asked {len(available_questions)} questions")
             print(f"Current Score is:{Fore.GREEN}{score}")
             print(f"level is:{Fore.GREEN}{difficulty.capitalize()}\n")
             print(f"Question #{counter+1}: {random_question["question"]}")
@@ -106,27 +105,23 @@ def playGame():
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
             break
-    # Call DisplayScore method
-    displayScore()
 
 
 # Definition of get_random_question() method
 def get_random_question(available_questions):
-    """Retrieve a random question that hasn't been asked
-        yet from given list"""
-
+    """Retrieve a random question that hasn't been asked yet from the given list."""
+    global asked_questions
     if len(asked_questions) == len(available_questions):
-        return None
+        return None  # No more questions left
 
-    # Getting random number from 0-49
+    # Getting a random number from 0 to len(available_questions) - 1
     random_number = random.randrange(0, len(available_questions))
     while random_number in asked_questions:
         random_number = random.randrange(0, len(available_questions))
     # Marking the question as asked
     asked_questions.append(random_number)
-    # Get the elements of questions list
-    random_question = available_questions[random_number]
-    return random_question
+    return available_questions[random_number]
+    
 
 
 # Definition of get_validated_input() method
@@ -153,8 +148,7 @@ def validate_input(user, random_question):
 
     """Check if the user's input matches the correct
     answer and update the score."""
-    global score
-    global wrong_answers
+    global score, wrong_answers
     try:
         # Check if the user's input matches the correct answer
         if user == random_question["answers"]:
@@ -170,7 +164,6 @@ def validate_input(user, random_question):
         print(f"An error occurred while validating input: {e}")
     time.sleep(1)
     clear()
-# Definition of reset_game()
 
 
 def reset_game():
@@ -193,8 +186,8 @@ def displayScore():
         print(Fore.GREEN + "You have answered all questions right\n")
     elif score > 0:
         print(f"{Fore.GREEN}Your total score is {score}")
-        print(f"{Fore.GREEN}Wrong answers are: {wrong_answers}\n")
-        print(f"{Fore.GREEN}Better Luck Next Time")
+        print(f"{Fore.GREEN}Wrong answers are: {wrong_answers}")
+        print(f"{Fore.GREEN}Better Luck Next Time\n")
     else:
         print(f"{Fore.GREEN}Oops!The cats won this round!")
         print(f"{Fore.GREEN}Try again and show them who's boss!")
@@ -220,6 +213,8 @@ def main():
     input("Press Enter to Play Game\n")
     # Call playGame() method
     playGame()
+    # Call DisplayScore method
+    displayScore()
     while True:
         time.sleep(3)
         clear()
@@ -231,6 +226,7 @@ def main():
             clear()
             input("Press Enter to Play Game\n")
             playGame()
+            displayScore()
         elif play == "N":
             print(f"{Fore.YELLOW}Thank you for playing Fun Flick!")
             print("Goodbye!")

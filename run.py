@@ -69,7 +69,7 @@ def playGame():
     # Calling clear method to clear screen
     clear()
     global score, wrong_answers, available_questions, asked_questions
-    difficulty = select_level() 
+    difficulty = select_level()
     available_questions = filter_questions_by_difficulty(difficulty)
 
     # Check if there are any questions
@@ -89,7 +89,7 @@ def playGame():
             print(f"You will be asked {len(available_questions)} questions")
             print(f"Current Score is:{Fore.GREEN}{score}")
             print(f"level is:{Fore.GREEN}{difficulty.capitalize()}\n")
-            print(f"Question #{counter+1}: {random_question["question"]}")
+            print(f"Question #{counter+1}:{random_question["question"]}")
             # to loop through dictionary in questions for options
             for option in random_question["options"]:
                 print(option)
@@ -109,7 +109,7 @@ def playGame():
 
 # Definition of get_random_question() method
 def get_random_question(available_questions):
-    """Retrieve a random question that hasn't been asked yet from the given list."""
+    """Retrieve a random question that hasn't been asked yet"""
     global asked_questions
     if len(asked_questions) == len(available_questions):
         return None  # No more questions left
@@ -121,7 +121,6 @@ def get_random_question(available_questions):
     # Marking the question as asked
     asked_questions.append(random_number)
     return available_questions[random_number]
-    
 
 
 # Definition of get_validated_input() method
@@ -179,15 +178,16 @@ def displayScore():
     """
     Display the score and wrong answers
     """
-    global score, wrong_answers
-    if score >= 15:
+    global score, wrong_answers, available_questions
+    if score == len(available_questions):
         print(f"{Fore.GREEN}Your total score is {score}")
         print(f"{Fore.GREEN}Congratulations!")
         print(Fore.GREEN + "You have answered all questions right\n")
     elif score > 0:
         print(f"{Fore.GREEN}Your total score is {score}")
         print(f"{Fore.GREEN}Wrong answers are: {wrong_answers}")
-        print(f"{Fore.GREEN}Better Luck Next Time\n")
+        print(f"{Fore.GREEN}Think you can beat your current score?")
+        print(f"{Fore.GREEN}Let's see if you can outdo yourself this time!\n")
     else:
         print(f"{Fore.GREEN}Oops!The cats won this round!")
         print(f"{Fore.GREEN}Try again and show them who's boss!")
@@ -229,7 +229,7 @@ def main():
             displayScore()
         elif play == "N":
             print(f"{Fore.YELLOW}Thank you for playing Fun Flick!")
-            print("Goodbye!")
+            print(f"{Fore.YELLOW}Goodbye!")
             break  # to exit from the loop
         else:
             print(f"{Fore.RED}{play_again} is Invalid input.")

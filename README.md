@@ -89,6 +89,16 @@ source: [amiresponsive](https://ui.dev/amiresponsive?url=https://fun-flicks-3ac6
    - **Replayability:** By offering fresh content every time, it gives players a reason to return and play again.
    ![screenshot](documentation/asked-questions.png)
 
+7. **Difficulty Level Selection (Easy, Medium, Hard)**
+    - **Value:** Prompting the user to select a difficulty level personalizes the gameplay experience and allows players to adjust the challenge to their skill level.
+
+    - **Benefits:**
+
+        - **Tailored Experience:** By allowing users to choose between Easy, Medium, and Hard, the game caters to different skill levels, ensuring an enjoyable experience for everyone.
+        - **Input Validation:** The game checks for valid input (1, 2, or 3), preventing errors and enhancing the user experience by providing helpful feedback if an invalid option is entered.
+        - **Player Control:** With difficulty selection, players feel empowered and in control of the challenge, making the game more engaging and less frustrating.
+    ![screenshot](documentation/level.png)
+
 
 
 ### Future Features
@@ -130,30 +140,7 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ![screenshot](documentation/flowchart.png)
 
-I have also used Mermaid flowchart to generate my flowchart.
 
-```mermaid
-flowchart TD
-    A(Start) --> B(Display welcome message and instruction)
-    B --> C(Get random questions)
-    C --> D(Prompt user for input options)
-    D --> E{Is input valid?}
-    E -- Yes --> F{Are there more questions?}
-    E -- No --> D
-    F -- Yes --> G(Is answer correct?)
-    G -- Yes --> H(Increment score)
-    G -- No --> I(Increment wrong answer)
-    F -- No --> J(Display score)
-    J --> K(Play again?)
-    K --> L{Is input valid?}
-    L -- No --> K
-    L -- Yes --> M{Is the answer yes}
-    M -- Yes --> N(Reset game)
-    M -- No --> O(Game Over)
-    N --> C
-```
-
-Source: [Mermaid](https://mermaid.live/edit#pako:eNp1kktvozAUhf-K5RWR0ohHKBGLVm1pM2matJrOZkZsLLghaLDN2KaZFOW_z-WRyF0MC8v4fPec60dLM5kDjemukodsz5QhP5JUEPzunHeD_xNydXVD7p2k1HXFjuQAVSY5EA5aswIIEzkphTaqyUwpxWQovu-rHpwlGKIQkZz8aUB3hB6Rhx5JnDcleW1Io0GRnVRoVjeGyNpmk559bFd6lD9YVea3p0F9RJX8BN1DT-2dAmL2gCOXOFxyv-BbOcQPS0-2w9LBGCb0ARvKpFKQmduxj6XNfXNWIlPAQRiiEQQbGv1XFnNQUhSj8cTKHdHnyxHbZs-9tnbeOoEVrBTnXta98vKfM3mxnNfW0rn5TVeHp3Te6BH0WLmxsa3zHTTeYcH4uaON5fzqLFEgrx-XHW2Hi08FnVIOirMyx9fVdmJKMY9DSmOc5kz9TmkqTsixxsj3o8hojK8IprSpc2YgKVmhGKfxjlUaV2smaNzSvzT2vGAWhIE393w_cq_D0J_SI43DaOa6Cz-IIs8NFlEQnab0U0p0cGcLd76YX6Poe2E36-1-9eKQqWRT7Mes0z_k7ugS)
 
 ### Functions
 
@@ -178,6 +165,8 @@ The primary functions used on this application are:
     - This is the entry point for the entire program. It sets up the game by providing instructions and calling the playGame() function.
 - `filter_questions_by_difficulty(difficulty)`
     - This method filters questions based on the player's selected difficulty (easy, medium, or hard). It returns a list of questions that match the specified difficulty level, allowing the quiz to present appropriate questions to the player. This ensures that the game's difficulty aligns with the user's choice.
+- `select_level()`
+    - This method prompts the user to choose a difficulty level (Easy, Medium, or Hard) by entering 1, 2, or 3. It validates the input to ensure a valid selection and returns the corresponding difficulty level as a string. If an invalid input is provided, it prompts the user to try again.
 
 
 ### Imports
@@ -211,7 +200,6 @@ Deployment steps are as follows, after account setup:
 - Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
 - Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
 - From the new app **Settings**, click **Reveal Config Vars**, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
-- If using any confidential credentials, such as CREDS.JSON, then these should be pasted in the Config Variables as well.
 - Further down, to support dependencies, select **Add Buildpack**.
 - The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
 
@@ -297,7 +285,7 @@ You can fork this repository by using the following steps:
 #### Local Development:
 
 - The project runs on  local machine using Python. Local deployment gives full control, making it easy to test, debug, and modify code quickly.
-- Dependencies are installed via requirements.txt, and the app is run directly with a command like python app.py.
+- Dependencies are installed via requirements.txt, and the app is run directly with a command like python run.py.
 - Ideal for quick iterations and testing.
 - When running the app locally on a machine using Python, the colorama library works perfectly. It ensures that terminal output is styled with colors for better readability and user experience. The colors appear vibrant and as expected in the terminal.
 

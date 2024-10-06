@@ -38,36 +38,6 @@ As Fun Flick is a terminal-based game, it doesn't have a traditional responsive 
 
 In the Fun Flick quiz game, defensive programming techniques were implemented to ensure that the game runs smoothly, securely, and handles invalid inputs effectively.
 
-1. Input Validation:
-
-    - Expected: Users are prompted to enter valid options (A, B, C, or D) for answers. Only these inputs are acceptable.
-    - Testing: Tested by entering a mix of valid and invalid inputs (e.g., numbers, special characters, or empty inputs).
-    - Result: The game correctly prompts for valid input when invalid options are entered.
-    - Fix: Any invalid inputs are handled gracefully, and users are shown an error message to re-enter a valid choice (A, B, C, or D).
-
-2. Handling Edge Cases:
-
-    - Expected: If all questions have been asked, the game should end properly and notify the user.
-    - Testing: Repeated the game until all questions were answered.
-    - Result: The game ends properly with no crashes and shows the final score.
-    - Fix: Ensured that no question is repeated, and when the quiz is over, the game displays the "Game Over" message.
-
-3. Preventing Crashes from Empty or Corrupt Question Data:
-
-    - Expected: If there are no questions in the database (empty list), the game should notify the player and not crash.
-    - Testing: Simulated an empty list of questions.
-    - Result: The game safely informs the player that no questions are available and exits.
-    - Fix: Added a check to handle empty or invalid question data without causing errors.
-
-4. Replay Handling:
-
-    - Expected: Players should be able to restart the game or exit gracefully after completion.
-    - Testing: Tested the replay function by choosing both 'Y' and 'N' after game completion.
-    - Result: The game restarts or exits properly based on the user's input.
-    - Fix: Added input validation for the replay prompt, ensuring only 'Y' or 'N' is accepted.
-
-
-
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | Expectation | Test | Result | Fix | Screenshot |
